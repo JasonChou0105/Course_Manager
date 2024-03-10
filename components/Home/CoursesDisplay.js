@@ -1,13 +1,13 @@
-import { FlatList, View } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import CourseTile from "./CourseTile";
 
 function CoursesDisplay({ courses }) {
   return (
-    <View>
-      <Text>hiwefwef</Text>
+    <View style={styles.container}>
       <FlatList
         data={courses}
         renderItem={(itemData) => DisplayTile(itemData.item)}
+        numColumns={2}
       />
     </View>
   );
@@ -16,5 +16,11 @@ function CoursesDisplay({ courses }) {
 function DisplayTile(item) {
   return <CourseTile Data={item} />;
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+  },
+});
 
 export default CoursesDisplay;
