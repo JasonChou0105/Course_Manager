@@ -6,7 +6,7 @@ function CourseTile({ Data }) {
   return (
     <View style={styles.container}>
       <CourseHeader>{Data.name}</CourseHeader>
-      <InfoContainer average={Data.average} />
+      <InfoContainer average={Data.average} deadlines={Data.deadlines} />
     </View>
   );
 }
@@ -19,9 +19,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: "#b5b4b4",
     overflow: "hidden",
+    height: 200,
   },
   infoContainer: {
-    margin: 24,
+    margin: 8,
   },
 });
 

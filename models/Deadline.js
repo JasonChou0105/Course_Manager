@@ -1,3 +1,4 @@
+//title, dueDate, id
 export default class Deadline {
   constructor(title, dueDate, id) {
     this.title = title;
