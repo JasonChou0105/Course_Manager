@@ -1,10 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 function ScreenHeader({ children }) {
+  const navigation = useNavigation();
+
+  function toggleDrawer() {
+    navigation.toggleDrawer();
+  }
+
   return (
     <View style={styles.container}>
-      <Ionicons name="menu-outline" size={24} color="black" />
+      <Pressable onPress={toggleDrawer}>
+        <Ionicons name="menu-outline" size={24} color="black" />
+      </Pressable>
       <Text style={styles.title}>{children}</Text>
     </View>
   );
@@ -16,6 +25,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     margin: 8,
     padding: 8,
+    marginTop: 24,
     borderBottomWidth: 1,
   },
   title: {

@@ -24,6 +24,9 @@ function HomeScreen() {
             [
               new Deadline("2.1", new Date(2024, 2, 10)),
               new Deadline("2.2", new Date(2024, 2, 11)),
+              new Deadline("2.3", new Date(2024, 2, 11)),
+              new Deadline("2.4", new Date(2024, 2, 11)),
+              new Deadline("2.5", new Date(2024, 2, 11)),
             ]
           ),
           new Course("Science", "science", "73.9", [], []),
@@ -37,7 +40,6 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
   },
 });
 

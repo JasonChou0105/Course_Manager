@@ -1,13 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import CourseHeader from "./CourseHeader";
 import InfoContainer from "./InfoContainer";
+import { useNavigation } from "@react-navigation/native";
 
 function CourseTile({ Data }) {
+  const navigation = useNavigation();
+
+  function pressHandle() {
+    navigation.navigate("CourseScreen", { data: Data });
+  }
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={pressHandle}>
       <CourseHeader>{Data.name}</CourseHeader>
       <InfoContainer average={Data.average} deadlines={Data.deadlines} />
-    </View>
+    </Pressable>
   );
 }
 

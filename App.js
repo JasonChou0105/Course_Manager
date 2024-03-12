@@ -1,12 +1,27 @@
 import { StatusBar } from "expo-status-bar";
+import "react-native-gesture-handler";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CourseScreen from "./screens/CourseScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+
+function AppDrawer() {
+  return (
+    <Drawer.Navigator
+      initialRouteName="HomeScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+    </Drawer.Navigator>
+  );
+}
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
-
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -14,11 +29,9 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="HomeScreen"
-          options={{ title: "Home" }}
-          component={HomeScreen}
-        />
+        <Stack.Screen name="DrawerScreen" component={AppDrawer} />
+
+        <Stack.Screen name="CourseScreen" component={CourseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
