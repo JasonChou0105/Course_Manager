@@ -16,10 +16,13 @@ function AppDrawer() {
       initialRouteName="HomeScreen"
       screenOptions={{ headerShown: false }}
     >
+      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen
-        name="HomeScreen"
-        options={{ title: "My Courses" }}
-        component={HomeScreen}
+        name="CourseScreen"
+        component={CourseScreen}
+        options={{
+          drawerItemStyle: { height: 0 },
+        }}
       />
     </Drawer.Navigator>
   );
@@ -34,8 +37,6 @@ export default function App() {
         }}
       >
         <Stack.Screen name="DrawerScreen" component={AppDrawer} />
-
-        <Stack.Screen name="CourseScreen" component={CourseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

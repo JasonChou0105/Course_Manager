@@ -1,23 +1,19 @@
-import { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
-
-var displayed = 0;
-var canLoop = true;
+import getUpcomingDueDates from "../../HelperFunctions/getUpcomingDueDates";
+import getDaysUntilDue from "../../HelperFunctions/getDaysUntilDue";
 
 function InfoContainer({ average, deadlines }) {
-  useEffect(() => {
-    displayed = 0;
-    canLoop = true;
-  }, []);
+  var [upcoming, additional] = getUpcomingDueDates(deadlines, 2);
   return (
     <View style={styles.container}>
       <View style={styles.dueDateContainer}>
-        {deadlines.length != 0 ? (
-          deadlines.map(
-            (deadline) => canLoop && displayDueDate(deadline, deadlines.length)
-          )
+        {upcoming.length != 0 ? (
+          upcoming.map((deadline) => displayDueDate(deadline))
         ) : (
           <Text style={styles.extraText}>Nothing due soon :)</Text>
+        )}
+        {additional != 0 && (
+          <Text style={styles.extraText}>+{additional} more this week...</Text>
         )}
       </View>
       <View style={styles.averageContainer}>
@@ -26,32 +22,21 @@ function InfoContainer({ average, deadlines }) {
     </View>
   );
 }
-function displayDueDate(deadline, amount) {
-  const diffTime = Math.abs(deadline.dueDate - new Date().setHours(0, 0, 0, 0));
-  var dueDate = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  if (dueDate < 7) {
-    if (displayed < 2) {
-      if (dueDate == 0) {
-        dueDate = `due today`;
-      } else if (dueDate == 1) {
-        dueDate = `due tomorrow`;
-      } else {
-        dueDate = `due in ${dueDate} days`;
-      }
-      displayed++;
-      return (
-        <Text style={styles.dueDateText}>
-          <Text style={styles.highlightedText}>{deadline.title} </Text>
-          {dueDate}
-        </Text>
-      );
-    } else {
-      canLoop = false;
-      return (
-        <Text style={styles.extraText}>+{amount - displayed} more...</Text>
-      );
-    }
+function displayDueDate(deadline) {
+  var daysUntilDue = getDaysUntilDue(deadline.dueDate);
+  if (daysUntilDue == 0) {
+    dueDate = `due today`;
+  } else if (daysUntilDue == 1) {
+    dueDate = `due tomorrow`;
+  } else {
+    dueDate = `due in ${daysUntilDue} days`;
   }
+  return (
+    <Text style={styles.dueDateText}>
+      <Text style={styles.highlightedText}>{deadline.title} </Text>
+      {dueDate}
+    </Text>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -72,6 +57,7 @@ const styles = StyleSheet.create({
   dueDateContainer: {
     marginBottom: 8,
   },
+
   extraText: {
     fontStyle: "italic",
     fontSize: 11,
