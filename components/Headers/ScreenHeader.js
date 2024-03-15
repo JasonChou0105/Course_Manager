@@ -2,11 +2,11 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-function ScreenHeader({ children }) {
+function ScreenHeader({ children, openMenu }) {
   const navigation = useNavigation();
 
   function toggleDrawer() {
-    navigation.toggleDrawer();
+    navigation.openDrawer();
   }
 
   return (

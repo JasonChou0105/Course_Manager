@@ -2,6 +2,9 @@ import { FlatList, View, StyleSheet } from "react-native";
 import CourseTile from "./CourseTile";
 
 function CoursesDisplay({ courses }) {
+  function DisplayTile(item) {
+    return <CourseTile Data={item} />;
+  }
   return (
     <View style={styles.container}>
       <FlatList
@@ -11,10 +14,6 @@ function CoursesDisplay({ courses }) {
       />
     </View>
   );
-}
-
-function DisplayTile(item) {
-  return <CourseTile Data={item} />;
 }
 
 const styles = StyleSheet.create({

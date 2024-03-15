@@ -5,9 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 
 function CourseTile({ Data }) {
   const navigation = useNavigation();
-
   function pressHandle() {
-    navigation.navigate("CourseScreen", { data: Data });
+    navigation.navigate("CourseScreen", { name: Data.name });
   }
   return (
     <Pressable style={styles.container} onPress={pressHandle}>

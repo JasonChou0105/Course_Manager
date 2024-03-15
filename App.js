@@ -16,7 +16,11 @@ function AppDrawer() {
       initialRouteName="HomeScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Screen
+        name="HomeScreen"
+        options={{ title: "My Courses" }}
+        component={HomeScreen}
+      />
     </Drawer.Navigator>
   );
 }

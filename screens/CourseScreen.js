@@ -2,12 +2,11 @@ import { Text, View } from "react-native";
 import ScreenHeader from "../components/Headers/ScreenHeader";
 
 function CourseScreen({ route }) {
-  const { data } = route.params;
-
+  const { name } = route.params;
   return (
     <View>
-      <ScreenHeader>{data.name}</ScreenHeader>
-      <Text>{data.name}</Text>
+      <ScreenHeader>{name}</ScreenHeader>
+      <Text>{name}</Text>
     </View>
   );
 }
