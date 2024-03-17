@@ -1,5 +1,5 @@
 import { FlatList, View, StyleSheet } from "react-native";
-import CourseTile from "./CourseTile";
+import CourseTile from "./Tile/CourseTile";
 
 function CoursesDisplay({ courses }) {
   function DisplayTile(item) {

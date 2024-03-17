@@ -2,11 +2,11 @@ import { View, Text, StyleSheet } from "react-native";
 import CoursesDisplay from "../components/Home/CoursesDisplay";
 import Course from "../models/Course";
 import ScreenHeader from "../components/Headers/ScreenHeader";
-import Header from "../components/Headers/Header";
+import Header2 from "../components/Headers/Header2";
 import Test from "../models/Test";
 import Deadline from "../models/Deadline";
 
-//name, banner, average, tests/assignments (new object array), deadlines (new object array)
+//name, description, banner, average, tests/assignments (new object array), deadlines (new object array)
 //title, mark, weight, id
 //title, dueDate, id
 
@@ -14,11 +14,12 @@ function HomeScreen() {
   return (
     <View style={styles.container}>
       <ScreenHeader>Home</ScreenHeader>
-      <Header>Your Courses: </Header>
+      <Header2 margin={20}>Your Courses: </Header2>
       <CoursesDisplay
         courses={[
           new Course(
             "Math",
+            "idk what to put here but its here now",
             "math",
             "91.4",
             [],
@@ -30,9 +31,9 @@ function HomeScreen() {
               new Deadline("2.5", new Date(2024, 2, 11)),
             ]
           ),
-          new Course("Science", "science", "73.9", [], []),
-          new Course("Tech", "tech", "92", [], []),
-          new Course("Geography", "Geography", "84.2", [], []),
+          new Course("Science", " ", "science", "73.9", [], []),
+          new Course("Tech", " ", "tech", "92", [], []),
+          new Course("Geography", " ", "Geography", "84.2", [], []),
         ]}
       />
     </View>

@@ -1,16 +1,24 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import ScreenHeader from "../components/Headers/ScreenHeader";
+import CourseHeader from "../components/Course/Header/CourseHeader";
 
-//name, average, view homework and assignments, upcoming
+//name, description, average, view homework and assignments, upcoming
 
 function CourseScreen({ route }) {
-  const { name } = route.params;
+  const { name, description, average } = route.params;
   return (
     <View>
       <ScreenHeader>{name}</ScreenHeader>
-      <Text>{name}</Text>
+      <CourseHeader name={name} description={description} average={average} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default CourseScreen;

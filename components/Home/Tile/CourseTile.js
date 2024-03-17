@@ -1,12 +1,16 @@
 import { Pressable, StyleSheet } from "react-native";
-import CourseHeader from "./CourseHeader";
+import CourseHeader from "./TileHeader";
 import InfoContainer from "./InfoContainer";
 import { useNavigation } from "@react-navigation/native";
 
 function CourseTile({ Data }) {
   const navigation = useNavigation();
   function pressHandle() {
-    navigation.navigate("CourseScreen", { name: Data.name });
+    navigation.navigate("CourseScreen", {
+      name: Data.name,
+      description: Data.description,
+      average: Data.average,
+    });
   }
   return (
     <Pressable style={styles.container} onPress={pressHandle}>

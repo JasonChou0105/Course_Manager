@@ -1,8 +1,9 @@
-//name, banner, average, tests/assignments (new object array), deadlines (new object array)
+//name, banner, description, average, tests/assignments (new object array), deadlines (new object array)
 
 export default class Course {
-  constructor(name, banner, average, grades, deadlines, id) {
+  constructor(name, description, banner, average, grades, deadlines, id) {
     this.name = name;
+    this.description = description;
     this.banner = banner;
     this.average = average;
     this.grades = grades;

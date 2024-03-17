@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import getUpcomingDueDates from "../../HelperFunctions/getUpcomingDueDates";
-import getDaysUntilDue from "../../HelperFunctions/getDaysUntilDue";
+import getUpcomingDueDates from "../../../HelperFunctions/getUpcomingDueDates";
+import getDaysUntilDue from "../../../HelperFunctions/getDaysUntilDue";
 
 function InfoContainer({ average, deadlines }) {
   var [upcoming, additional] = getUpcomingDueDates(deadlines, 2);

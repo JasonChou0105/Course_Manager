@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 function CourseHeader({ children }) {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require(`../../../assets/banners/math.png`)}
+      style={styles.container}
+    >
       <Text style={styles.title}>{children}</Text>
-    </View>
+    </ImageBackground>
   );
 }
 
