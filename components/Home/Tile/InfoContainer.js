@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import getUpcomingDueDates from "../../../HelperFunctions/getUpcomingDueDates";
-import getDaysUntilDue from "../../../HelperFunctions/getDaysUntilDue";
+import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
+import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
 
 function InfoContainer({ average, deadlines }) {
   var [upcoming, additional] = getUpcomingDueDates(deadlines, 2);
@@ -8,7 +8,7 @@ function InfoContainer({ average, deadlines }) {
     <View style={styles.container}>
       <View style={styles.dueDateContainer}>
         {upcoming.length != 0 ? (
-          upcoming.map((deadline) => displayDueDate(deadline))
+          upcoming.map((deadline) => displayDueDateLocal(deadline))
         ) : (
           <Text style={styles.extraText}>Nothing due soon :)</Text>
         )}
@@ -22,19 +22,12 @@ function InfoContainer({ average, deadlines }) {
     </View>
   );
 }
-function displayDueDate(deadline) {
-  var daysUntilDue = getDaysUntilDue(deadline.dueDate);
-  if (daysUntilDue == 0) {
-    dueDate = `due today`;
-  } else if (daysUntilDue == 1) {
-    dueDate = `due tomorrow`;
-  } else {
-    dueDate = `due in ${daysUntilDue} days`;
-  }
+
+function displayDueDateLocal(deadline) {
   return (
     <Text style={styles.dueDateText}>
-      <Text style={styles.highlightedText}>{deadline.title} </Text>
-      {dueDate}
+      <Text>{deadline.name} </Text>
+      {displayDueDate(deadline.dueDate)}
     </Text>
   );
 }

@@ -5,6 +5,7 @@ import ScreenHeader from "../components/Headers/ScreenHeader";
 import Header2 from "../components/Headers/Header2";
 import Test from "../models/Test";
 import Deadline from "../models/Deadline";
+import AddCourseButton from "../components/Home/AddCourseButton";
 
 //name, description, banner, average, tests/assignments (new object array), deadlines (new object array)
 //title, mark, weight, id
@@ -13,7 +14,7 @@ import Deadline from "../models/Deadline";
 function HomeScreen() {
   return (
     <View style={styles.container}>
-      <ScreenHeader>Home</ScreenHeader>
+      <ScreenHeader AddCourseComp={AddCourseButton}>Home</ScreenHeader>
       <Header2 margin={20}>Your Courses: </Header2>
       <CoursesDisplay
         courses={[
@@ -24,14 +25,25 @@ function HomeScreen() {
             "91.4",
             [],
             [
-              new Deadline("2.1", new Date(2024, 2, 10)),
-              new Deadline("2.2", new Date(2024, 2, 11)),
-              new Deadline("2.3", new Date(2024, 2, 11)),
-              new Deadline("2.4", new Date(2024, 2, 11)),
-              new Deadline("2.5", new Date(2024, 2, 11)),
+              new Deadline("2.1", new Date(2024, 2, 19)),
+              new Deadline("2.2", new Date(2024, 2, 20)),
+              new Deadline("2.3", new Date(2024, 2, 23)),
+              new Deadline("2.1", new Date(2024, 2, 19)),
+              new Deadline("2.2", new Date(2024, 2, 20)),
+              new Deadline("2.3", new Date(2024, 2, 23)),
             ]
           ),
-          new Course("Science", " ", "science", "73.9", [], []),
+          new Course(
+            "Science",
+            " ",
+            "science",
+            "73.9",
+            [],
+            [
+              new Deadline("2.4", new Date(2024, 2, 20)),
+              new Deadline("2.5", new Date(2024, 2, 21)),
+            ]
+          ),
           new Course("Tech", " ", "tech", "92", [], []),
           new Course("Geography", " ", "Geography", "84.2", [], []),
         ]}
@@ -42,6 +54,7 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#ffffff",
   },
 });
 

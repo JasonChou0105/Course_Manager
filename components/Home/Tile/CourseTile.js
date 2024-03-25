@@ -10,6 +10,7 @@ function CourseTile({ Data }) {
       name: Data.name,
       description: Data.description,
       average: Data.average,
+      deadlines: Data.deadlines,
     });
   }
   return (

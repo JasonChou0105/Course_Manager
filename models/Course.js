@@ -10,4 +10,15 @@ export default class Course {
     this.deadlines = deadlines;
     this.id = id;
   }
+  deadlinesToJson() {
+    var res = [];
+    for (const deadline of this.deadlines) {
+      res.push({
+        name: deadline.name,
+        dueDate: deadline.dueDate,
+        id: deadline.id,
+      });
+    }
+    return res;
+  }
 }

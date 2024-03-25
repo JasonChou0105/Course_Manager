@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CourseScreen from "./screens/CourseScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import AddCourseScreen from "./screens/AddCourseScreen";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -14,7 +15,9 @@ function AppDrawer() {
   return (
     <Drawer.Navigator
       initialRouteName="HomeScreen"
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+      }}
     >
       <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen
@@ -37,6 +40,7 @@ export default function App() {
         }}
       >
         <Stack.Screen name="DrawerScreen" component={AppDrawer} />
+        <Stack.Screen name="AddCourseScreen" component={AddCourseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

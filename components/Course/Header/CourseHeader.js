@@ -25,10 +25,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     margin: 42,
+    marginBottom: 16,
     padding: 4,
     borderRadius: 16,
     alignSelf: "center",
     overflow: "hidden",
+    elevation: 8,
   },
   descriptionText: {
     color: "#ffffff",
