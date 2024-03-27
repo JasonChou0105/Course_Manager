@@ -27,6 +27,7 @@ function AppDrawer() {
           drawerItemStyle: { height: 0 },
         }}
       />
+      <Drawer.Screen name="AddCourseScreen" component={AddCourseScreen} />
     </Drawer.Navigator>
   );
 }
@@ -40,7 +41,6 @@ export default function App() {
         }}
       >
         <Stack.Screen name="DrawerScreen" component={AppDrawer} />
-        <Stack.Screen name="AddCourseScreen" component={AddCourseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

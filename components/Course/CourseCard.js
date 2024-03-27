@@ -6,13 +6,12 @@ function CourseCard({ children }) {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 42,
-    marginTop: 16,
+    margin: 16,
+    marginBottom: 4,
     padding: 16,
-    borderRadius: 16,
+    borderRadius: 8,
     borderWidth: 1,
-    alignSelf: "center",
-    width: "90%",
+    borderColor: "#838383b6",
     backgroundColor: "#ffffff",
     elevation: 2,
   },

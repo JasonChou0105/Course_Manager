@@ -1,19 +1,22 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import ScreenHeader from "../components/Headers/ScreenHeader";
+import FormInput from "../components/AddCourse/FormInput";
+import AddCourseForm from "../components/AddCourse/AddCourseForm";
 
 function AddCourseScreen() {
   return (
-    <View>
+    <View style={styles.container}>
       <ScreenHeader>Add Course</ScreenHeader>
-      <Text>
-        adding courwse.syfvuebiyewg ufbegfkuqi gewof web f ging goon
-        hahahfayhufieasuh fiu weoiuheuifhwioe urbkjhbdf ouuhagouifh oidsjfhb
-        lassjdfh lwieh fliuweh fiwpe pifh oliqwehfn l jwqieh ofiuhweo iuqfh
-        oqwiuehf
-        oqiuwehwufohoeubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbgbvgbgbgbg
-      </Text>
+      <AddCourseForm />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+  },
+});
 
 export default AddCourseScreen;

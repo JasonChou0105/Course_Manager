@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   container: {
     margin: 8,
     padding: 8,
-    borderRadius: 8,
-    borderBottomWidth: 0.8,
+    borderBottomWidth: 1,
+    borderColor: "#999999b1",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
