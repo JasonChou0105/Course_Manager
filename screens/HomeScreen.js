@@ -6,6 +6,7 @@ import Header2 from "../components/Headers/Header2";
 import Test from "../models/Test";
 import Deadline from "../models/Deadline";
 import AddCourseButton from "../components/Home/AddCourseButton";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 //name, description, banner, average, tests/assignments (new object array), deadlines (new object array)
 //title, mark, weight, id
@@ -13,9 +14,8 @@ import AddCourseButton from "../components/Home/AddCourseButton";
 
 function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScreenHeader AddCourseComp={AddCourseButton}>Home</ScreenHeader>
-      <Header2 margin={20}>Your Courses: </Header2>
       <CoursesDisplay
         courses={[
           new Course(
@@ -48,7 +48,7 @@ function HomeScreen() {
           new Course("Geography", " ", "Geography", "84.2", [], []),
         ]}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({

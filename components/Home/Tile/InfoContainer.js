@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   averageContainer: {
-    padding: 8,
+    paddingTop: 8,
     borderTopWidth: 1,
     borderTopColor: "#b5b4b4",
     alignItems: "flex-end",

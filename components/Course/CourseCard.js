@@ -1,13 +1,18 @@
 import { StyleSheet, View } from "react-native";
+import BoxShadowIos from "../Backgrounds/BoxShadowIos";
 
 function CourseCard({ children }) {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <BoxShadowIos>
+      <View style={styles.container}>{children}</View>
+    </BoxShadowIos>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 16,
-    marginBottom: 4,
+    marginHorizontal: 12,
+    marginVertical: 4,
     padding: 16,
     borderRadius: 8,
     borderWidth: 1,

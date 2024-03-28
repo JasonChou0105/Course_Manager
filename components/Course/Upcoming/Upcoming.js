@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
   headerContainer: {
     borderBottomWidth: 1,
     padding: 8,
-    marginBottom: 8,
   },
 });
 

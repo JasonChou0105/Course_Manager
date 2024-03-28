@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     margin: 8,
     padding: 8,
-    marginTop: 24,
     borderBottomWidth: 1,
   },
   innerContainer1: {
