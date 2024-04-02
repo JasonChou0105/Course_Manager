@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { LinearGradient } from "expo-linear-gradient";
+import COLORS from "../../constants/Colors/COLORS";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function ScreenHeader({ children, AddCourseComp }) {
   const navigation = useNavigation();
@@ -10,19 +13,21 @@ function ScreenHeader({ children, AddCourseComp }) {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.innerContainer1}>
-        <Pressable onPress={toggleDrawer}>
-          <Ionicons name="menu-outline" size={24} color="black" />
-        </Pressable>
-        <Text style={styles.title}>{children}</Text>
-      </View>
-      <View style={styles.innerContainer2}>
-        {AddCourseComp && <AddCourseComp />}
-        <View style={styles.profileContainer}>
-          <Text style={styles.profileText}>J</Text>
+    <View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.innerContainer}>
+          <Pressable onPress={toggleDrawer}>
+            <Ionicons name="menu-outline" size={24} color="black" />
+          </Pressable>
+          <Text style={styles.title}>{children}</Text>
         </View>
-      </View>
+        <View style={styles.innerContainer}>
+          {AddCourseComp && <AddCourseComp />}
+          <View style={styles.profileContainer}>
+            <Text style={styles.profileText}>J</Text>
+          </View>
+        </View>
+      </SafeAreaView>
     </View>
   );
 }
@@ -32,15 +37,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    margin: 8,
-    padding: 8,
     borderBottomWidth: 1,
+    borderColor: COLORS.border,
+    padding: 8,
+    backgroundColor: "#ffffff",
+    elevation: 20,
+    marginBottom: 4,
   },
-  innerContainer1: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  innerContainer2: {
+  innerContainer: {
     flexDirection: "row",
     alignItems: "center",
   },

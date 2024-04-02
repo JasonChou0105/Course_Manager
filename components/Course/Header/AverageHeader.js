@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import Header1 from "../../Headers/Header1";
+import { Header1 } from "../../Headers/DefaultHeaders/Headers";
 
 function AverageContainer({ children }) {
   return (

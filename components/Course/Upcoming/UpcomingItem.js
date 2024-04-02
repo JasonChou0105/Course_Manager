@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import Header3 from "../../Headers/Header3";
+import { Header3 } from "../../Headers/DefaultHeaders/Headers";
 import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
 
 function UpcomingItem({ dueDate, name }) {

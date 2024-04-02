@@ -1,13 +1,15 @@
 import { Pressable, StyleSheet } from "react-native";
-import CourseHeader from "./TileHeader";
+import TileHeader from "./TileHeader";
 import InfoContainer from "./InfoContainer";
 import { useNavigation } from "@react-navigation/native";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function CourseTile({ Data }) {
   const navigation = useNavigation();
   function pressHandle() {
     navigation.navigate("CourseScreen", {
       name: Data.name,
+      banner: Data.banner,
       description: Data.description,
       average: Data.average,
       deadlines: Data.deadlines,
@@ -15,7 +17,7 @@ function CourseTile({ Data }) {
   }
   return (
     <Pressable style={styles.container} onPress={pressHandle}>
-      <CourseHeader>{Data.name}</CourseHeader>
+      <TileHeader banner={Data.banner}>{Data.name}</TileHeader>
       <InfoContainer average={Data.average} deadlines={Data.deadlines} />
     </Pressable>
   );
@@ -24,10 +26,10 @@ function CourseTile({ Data }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 16,
+    margin: 8,
     borderWidth: 1,
     borderRadius: 8,
-    borderColor: "#b5b4b4",
+    borderColor: COLORS.border,
     overflow: "hidden",
     height: 200,
   },

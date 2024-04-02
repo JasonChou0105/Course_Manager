@@ -1,16 +1,23 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import Header1 from "../../Headers/Header1";
+import { Header1 } from "../../Headers/DefaultHeaders/Headers";
 import AverageContainer from "./AverageHeader";
-import OrangeBanner from "../../../assets/banners/OrangeBanner";
+import OrangeBanner from "../../../assets/banners/Orange/OrangeBanner";
 import BoxShadowIos from "../../Backgrounds/BoxShadowIos";
+import BlueBanner from "../../../assets/banners/Blue/BlueBanner";
+import PurpleBanner from "../../../assets/banners/Purple/PurpleBanner";
+import getBanner from "../../../HelperFunctions/getBanner";
 
-function CourseHeader({ name, description, average }) {
+function CourseHeader({ name, description, average, banner }) {
+  const Banner = getBanner(banner);
+
   return (
     <BoxShadowIos opacity={1}>
       <View style={styles.container}>
-        <OrangeBanner />
+        {Banner}
         <View style={styles.titleContainer}>
-          <Header1 color="#ffffff">{name}</Header1>
+          <Header1 color="#ffffff" weight="800">
+            {name}
+          </Header1>
           <Text style={styles.descriptionText}>{description}</Text>
         </View>
         <View style={styles.averageContainer}>

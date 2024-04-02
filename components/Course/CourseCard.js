@@ -1,5 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import BoxShadowIos from "../Backgrounds/BoxShadowIos";
+import COLORS from "../../constants/Colors/COLORS";
 
 function CourseCard({ children }) {
   return (
@@ -16,9 +17,9 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#838383b6",
+    borderColor: COLORS.border,
     backgroundColor: "#ffffff",
-    elevation: 2,
+    elevation: 1.5,
   },
 });
 

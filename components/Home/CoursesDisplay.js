@@ -1,6 +1,5 @@
 import { StyleSheet, ScrollView } from "react-native";
 import CourseTile from "./Tile/CourseTile";
-import Header2 from "../Headers/Header2";
 
 function CoursesDisplay({ courses }) {
   function DisplayTile(item) {
@@ -8,8 +7,6 @@ function CoursesDisplay({ courses }) {
   }
   return (
     <ScrollView style={styles.container}>
-      <Header2 margin={20}>Your Courses: </Header2>
-
       {courses.map((itemData) => DisplayTile(itemData))}
     </ScrollView>
   );

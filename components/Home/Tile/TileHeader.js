@@ -1,11 +1,19 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import OrangeBanner from "../../../assets/banners/OrangeBanner";
+import OrangeBanner from "../../../assets/banners/Orange/OrangeBanner";
+import { Header2 } from "../../Headers/DefaultHeaders/Headers";
+import BlueBanner from "../../../assets/banners/Blue/BlueBanner";
+import PurpleBanner from "../../../assets/banners/Purple/PurpleBanner";
+import getBanner from "../../../HelperFunctions/getBanner";
 
-function CourseHeader({ children }) {
+function TileHeader({ children, banner }) {
+  const Banner = getBanner(banner);
+  console.log(banner);
   return (
     <View style={styles.container}>
-      <OrangeBanner />
-      <Text style={styles.title}>{children}</Text>
+      {Banner}
+      <Header2 color="#ffffff" weight="800">
+        {children}
+      </Header2>
     </View>
   );
 }
@@ -16,10 +24,6 @@ const styles = StyleSheet.create({
     padding: 16,
     height: 80,
   },
-  title: {
-    fontSize: 18,
-    color: "#ffffff",
-  },
 });
 
-export default CourseHeader;
+export default TileHeader;

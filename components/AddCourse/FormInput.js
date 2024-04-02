@@ -1,5 +1,5 @@
 import { StyleSheet, TextInput, View } from "react-native";
-import Header3 from "../Headers/Header3";
+import { Header3 } from "../Headers/DefaultHeaders/Headers";
 
 function FormInput({ placeholder, title }) {
   return (

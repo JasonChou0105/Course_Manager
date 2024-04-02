@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 
-function Header1({ children, margin, color }) {
+function Header3({ children, margin, color, weight }) {
   const styles = StyleSheet.create({
     container: {
       margin: margin,
     },
     title: {
-      fontSize: 28,
+      fontSize: 16,
+      fontWeight: weight,
       color: color,
     },
   });
@@ -18,4 +19,4 @@ function Header1({ children, margin, color }) {
   );
 }
 
-export default Header1;
+export default Header3;

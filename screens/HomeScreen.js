@@ -2,11 +2,9 @@ import { View, Text, StyleSheet } from "react-native";
 import CoursesDisplay from "../components/Home/CoursesDisplay";
 import Course from "../models/Course";
 import ScreenHeader from "../components/Headers/ScreenHeader";
-import Header2 from "../components/Headers/Header2";
 import Test from "../models/Test";
 import Deadline from "../models/Deadline";
 import AddCourseButton from "../components/Home/AddCourseButton";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 //name, description, banner, average, tests/assignments (new object array), deadlines (new object array)
 //title, mark, weight, id
@@ -14,29 +12,29 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScreenHeader AddCourseComp={AddCourseButton}>Home</ScreenHeader>
       <CoursesDisplay
         courses={[
           new Course(
             "Math",
             "idk what to put here but its here now",
-            "math",
+            "blue",
             "91.4",
             [],
             [
-              new Deadline("2.1", new Date(2024, 2, 19)),
-              new Deadline("2.2", new Date(2024, 2, 20)),
-              new Deadline("2.3", new Date(2024, 2, 23)),
-              new Deadline("2.1", new Date(2024, 2, 19)),
-              new Deadline("2.2", new Date(2024, 2, 20)),
-              new Deadline("2.3", new Date(2024, 2, 23)),
+              new Deadline("2.1", new Date(2024, 3, 3)),
+              new Deadline("2.2", new Date(2024, 3, 4)),
+              new Deadline("2.3", new Date(2024, 3, 5)),
+              new Deadline("2.1", new Date(2024, 3, 5)),
+              new Deadline("2.2", new Date(2024, 3, 7)),
+              new Deadline("2.3", new Date(2024, 3, 8)),
             ]
           ),
           new Course(
             "Science",
             " ",
-            "science",
+            "orange",
             "73.9",
             [],
             [
@@ -44,11 +42,11 @@ function HomeScreen() {
               new Deadline("2.5", new Date(2024, 2, 21)),
             ]
           ),
-          new Course("Tech", " ", "tech", "92", [], []),
+          new Course("Tech", " ", "purple", "92", [], []),
           new Course("Geography", " ", "Geography", "84.2", [], []),
         ]}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 const styles = StyleSheet.create({
