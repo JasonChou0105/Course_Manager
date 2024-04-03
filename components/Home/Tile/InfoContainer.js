@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from "react-native";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
 
-function InfoContainer({ average, deadlines }) {
-  var [upcoming, additional] = getUpcomingDueDates(deadlines, 2);
+function InfoContainer({ average, assignments }) {
+  var [upcoming, additional] = getUpcomingDueDates(assignments, 2);
   return (
     <View style={styles.container}>
       <View style={styles.dueDateContainer}>

@@ -1,8 +1,8 @@
-//title, dueDate, id
 export default class Deadline {
-  constructor(name, dueDate, id) {
+  constructor(name, dueDate, description, id) {
     this.name = name;
     this.dueDate = dueDate;
+    this.description = description;
     this.id = id;
   }
 }

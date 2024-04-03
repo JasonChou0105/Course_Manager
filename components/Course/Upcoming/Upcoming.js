@@ -5,8 +5,8 @@ import UpcomingItem from "./UpcomingItem";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import COLORS from "../../../constants/Colors/COLORS";
 
-function Upcoming({ deadlines }) {
-  var [upcoming, additional] = getUpcomingDueDates(deadlines, 4);
+function Upcoming({ assignments }) {
+  var [upcoming, additional] = getUpcomingDueDates(assignments, 4);
   return (
     <CourseCard>
       <View style={styles.headerContainer}>

@@ -7,7 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 //name, description, average, view homework and assignments, upcoming
 
 function CourseScreen({ route }) {
-  const { name, banner, description, average, deadlines } = route.params;
+  const { name, banner, description, average, assignments } = route.params;
   return (
     <View style={styles.container}>
       <ScreenHeader>{name}</ScreenHeader>
@@ -18,8 +18,8 @@ function CourseScreen({ route }) {
           average={average}
           banner={banner}
         />
-        <Upcoming deadlines={deadlines} />
-        <Upcoming deadlines={deadlines} />
+        <Upcoming assignments={assignments} />
+        <Upcoming assignments={assignments} />
       </ScrollView>
     </View>
   );
