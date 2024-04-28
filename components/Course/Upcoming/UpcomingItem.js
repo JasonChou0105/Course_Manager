@@ -2,12 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import { Header3 } from "../../Headers/DefaultHeaders/Headers";
 import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
 
-function UpcomingItem({ dueDate, name }) {
+function UpcomingItem({ dueDate, name, template }) {
   return (
     <View style={styles.container}>
       <Header3>{name}</Header3>
       <View style={styles.dueDateContainer}>
-        <Text style={styles.dueDateText}>{displayDueDate(dueDate)}</Text>
+        <Text style={styles.dueDateText}>
+          {`${template} ${displayDueDate(dueDate)}`}
+        </Text>
       </View>
     </View>
   );

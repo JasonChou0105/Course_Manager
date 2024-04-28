@@ -7,7 +7,6 @@ import getBanner from "../../../HelperFunctions/getBanner";
 
 function TileHeader({ children, banner }) {
   const Banner = getBanner(banner);
-  console.log(banner);
   return (
     <View style={styles.container}>
       {Banner}

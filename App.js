@@ -7,28 +7,32 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CourseScreen from "./screens/CourseScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import AddCourseScreen from "./screens/AddCourseScreen";
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
 function AppDrawer() {
   return (
-    <Drawer.Navigator
-      initialRouteName="HomeScreen"
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-      <Drawer.Screen
-        name="CourseScreen"
-        component={CourseScreen}
-        options={{
-          drawerItemStyle: { height: 0 },
+    <Provider store={store}>
+      <Drawer.Navigator
+        initialRouteName="HomeScreen"
+        screenOptions={{
+          headerShown: false,
         }}
-      />
-      <Drawer.Screen name="AddCourseScreen" component={AddCourseScreen} />
-    </Drawer.Navigator>
+      >
+        <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+        <Drawer.Screen
+          name="CourseScreen"
+          component={CourseScreen}
+          options={{
+            drawerItemStyle: { height: 0 },
+          }}
+        />
+        <Drawer.Screen name="AddCourseScreen" component={AddCourseScreen} />
+      </Drawer.Navigator>
+    </Provider>
   );
 }
 

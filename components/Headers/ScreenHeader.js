@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import COLORS from "../../constants/Colors/COLORS";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BoxShadowIos from "../Backgrounds/BoxShadowIos";
 
 function ScreenHeader({ children, AddCourseComp }) {
   const navigation = useNavigation();
@@ -13,7 +14,7 @@ function ScreenHeader({ children, AddCourseComp }) {
   }
 
   return (
-    <View>
+    <BoxShadowIos>
       <SafeAreaView style={styles.container}>
         <View style={styles.innerContainer}>
           <Pressable onPress={toggleDrawer}>
@@ -28,7 +29,7 @@ function ScreenHeader({ children, AddCourseComp }) {
           </View>
         </View>
       </SafeAreaView>
-    </View>
+    </BoxShadowIos>
   );
 }
 
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     padding: 8,
     backgroundColor: "#ffffff",
-    elevation: 20,
+    elevation: 10,
     marginBottom: 4,
   },
   innerContainer: {

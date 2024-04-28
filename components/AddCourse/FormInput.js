@@ -1,14 +1,19 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View, Text } from "react-native";
 import { Header3 } from "../Headers/DefaultHeaders/Headers";
+import COLORS from "../../constants/Colors/COLORS";
 
-function FormInput({ placeholder, title }) {
+function FormInput({ placeholder, title, setHandle }) {
+  function onChangeHandle(text) {
+    setHandle(text);
+  }
   return (
     <View style={styles.container}>
-      <Header3>{title}</Header3>
       <View style={styles.textInputContainer}>
+        <Text style={styles.title}>{title}</Text>
         <TextInput
           style={styles.textInput}
           placeholder={placeholder}
+          onChangeText={onChangeHandle}
           placeholderTextColor={"#989898a3"}
         />
       </View>
@@ -18,12 +23,16 @@ function FormInput({ placeholder, title }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "80%",
-    margin: 8,
+    width: "100%",
+    marginVertical: 8,
+  },
+  title: {
+    color: COLORS.highlight,
+    fontSize: 12,
   },
   textInputContainer: {
-    backgroundColor: "#f4f4f4",
-    borderBottomWidth: 1,
+    borderWidth: 1,
+    borderColor: COLORS.border,
     width: "100%",
     padding: 8,
     marginTop: 8,

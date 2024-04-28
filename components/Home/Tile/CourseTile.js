@@ -13,12 +13,14 @@ function CourseTile({ Data }) {
       description: Data.description,
       average: Data.average,
       assignments: Data.assignments,
+      homework: Data.homework,
+      tests: Data.tests,
     });
   }
   return (
     <Pressable style={styles.container} onPress={pressHandle}>
       <TileHeader banner={Data.banner}>{Data.name}</TileHeader>
-      <InfoContainer average={Data.average} assignments={Data.assignments} />
+      <InfoContainer average={Data.average} homework={Data.homework} />
     </Pressable>
   );
 }

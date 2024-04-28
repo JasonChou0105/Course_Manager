@@ -2,17 +2,18 @@ import { StyleSheet, Text, View } from "react-native";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
 
-function InfoContainer({ average, assignments }) {
-  var [upcoming, additional] = getUpcomingDueDates(assignments, 2);
+function InfoContainer({ average, homework }) {
+  var [upcoming, additional] = getUpcomingDueDates(homework, 2);
+
   return (
     <View style={styles.container}>
       <View style={styles.dueDateContainer}>
-        {upcoming.length != 0 ? (
+        {upcoming.length > 0 ? (
           upcoming.map((deadline) => displayDueDateLocal(deadline))
         ) : (
           <Text style={styles.extraText}>Nothing due soon :)</Text>
         )}
-        {additional != 0 && (
+        {additional > 0 && (
           <Text style={styles.extraText}>+{additional} more this week...</Text>
         )}
       </View>

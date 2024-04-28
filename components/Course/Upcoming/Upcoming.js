@@ -1,16 +1,26 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { Header3 } from "../../Headers/DefaultHeaders/Headers";
-import CourseCard from "../CourseCard";
+import Card from "../../Backgrounds/Card";
 import UpcomingItem from "./UpcomingItem";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import COLORS from "../../../constants/Colors/COLORS";
 
-function Upcoming({ assignments }) {
-  var [upcoming, additional] = getUpcomingDueDates(assignments, 4);
+function Upcoming({ data, template = "", title }) {
+  function renderDueDate(data) {
+    return (
+      <UpcomingItem
+        name={data.name}
+        dueDate={data.dueDate}
+        template={template}
+      />
+    );
+  }
+
+  var [upcoming, additional] = getUpcomingDueDates(data, 4);
   return (
-    <CourseCard>
+    <Card>
       <View style={styles.headerContainer}>
-        <Header3>Upcoming</Header3>
+        <Header3>{title}</Header3>
       </View>
       <View style={styles.itemsContainer}>
         {upcoming.length != 0 ? (
@@ -22,12 +32,8 @@ function Upcoming({ assignments }) {
           <Text style={styles.extraText}>+{additional} more this week...</Text>
         )}
       </View>
-    </CourseCard>
+    </Card>
   );
-}
-
-function renderDueDate(data) {
-  return <UpcomingItem name={data.name} dueDate={data.dueDate} />;
 }
 
 const styles = StyleSheet.create({

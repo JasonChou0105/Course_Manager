@@ -1,13 +1,13 @@
 export default class Course {
   constructor({
-    name,
+    name = "",
     description = "",
-    banner,
+    banner = "",
     average = "--",
     tests = [],
     assignments = [],
     homework = [],
-    id,
+    id = "0",
   }) {
     this.name = name;
     this.description = description;
@@ -19,23 +19,47 @@ export default class Course {
     this.id = id;
   }
   toJSON() {
-    var newDeadlines = [];
-    for (const deadline of this.deadlines) {
-      newDeadlines.push({
-        name: deadline.name,
-        dueDate: deadline.dueDate,
-        id: deadline.id,
-      });
+    var newHomework = [];
+    if (this.homework) {
+      for (const item of this.homework) {
+        newHomework.push({
+          name: item.name,
+          dueDate: item.dueDate,
+          id: item.id,
+        });
+      }
     }
-
-    return {
+    var newAssignments = [];
+    if (this.assignments) {
+      for (const assignment of this.assignments) {
+        newAssignments.push({
+          name: assignment.name,
+          dueDate: assignment.dueDate,
+          id: assignment.id,
+        });
+      }
+    }
+    var newTests = [];
+    if (this.tests) {
+      for (const test of this.tests) {
+        newTests.push({
+          name: test.name,
+          dueDate: test.dueDate,
+          id: test.id,
+        });
+      }
+    }
+    const res = {
       name: this.name,
       description: this.description,
       banner: this.banner,
       average: this.average,
-      grades: this.grades,
-      deadlines: newDeadlines,
+      tests: newTests,
+      assignments: newAssignments,
+      homework: newHomework,
       id: this.id,
     };
+    console.log(res);
+    return res;
   }
 }
