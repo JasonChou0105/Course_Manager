@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { LinearGradient } from "expo-linear-gradient";
 import COLORS from "../../constants/Colors/COLORS";
 import { SafeAreaView } from "react-native-safe-area-context";
 import BoxShadowIos from "../Backgrounds/BoxShadowIos";
@@ -36,18 +35,20 @@ function ScreenHeader({ children, AddCourseComp }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
     borderBottomWidth: 1,
     borderColor: COLORS.border,
-    padding: 8,
     backgroundColor: "#ffffff",
     elevation: 10,
     marginBottom: 4,
+    maxHeight: 105,
+    padding: 8,
+    paddingTop: 0,
   },
   innerContainer: {
     flexDirection: "row",
     alignItems: "center",
+    height: 50,
   },
   profileContainer: {
     borderRadius: 124,

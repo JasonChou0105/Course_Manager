@@ -39,14 +39,7 @@ export const coursesSlice = createSlice({
   },
   reducers: {
     addCourse: (state, action) => {
-      state.courses.push(
-        new Course({
-          average: "wefwefwef.4",
-          banner: "wefwef",
-          description: "wefwefwf",
-          name: "wef",
-        }).toJSON()
-      );
+      state.courses.push(new Course(action.payload).toJSON());
     },
   },
 });

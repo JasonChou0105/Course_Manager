@@ -8,7 +8,7 @@ function BoxShadowIos({ children, opacity = 0.3 }) {
         width: 0,
         height: 5,
       },
-      shadowOpacity: opacity,
+      shadowOpacity: opacity / 2,
       shadowRadius: 6,
     },
   });
