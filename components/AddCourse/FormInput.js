@@ -1,10 +1,10 @@
 import { StyleSheet, TextInput, View, Text } from "react-native";
-import { Header3 } from "../Headers/DefaultHeaders/Headers";
 import COLORS from "../../constants/Colors/COLORS";
 
-function FormInput({ placeholder, title, setHandle }) {
+function FormInput({ placeholder, title, setHandle, value, setValid }) {
   function onChangeHandle(text) {
     setHandle(text);
+    setValid(true);
   }
   return (
     <View style={styles.container}>
@@ -13,6 +13,7 @@ function FormInput({ placeholder, title, setHandle }) {
         <TextInput
           style={styles.textInput}
           placeholder={placeholder}
+          value={value}
           onChangeText={onChangeHandle}
           placeholderTextColor={"#989898a3"}
         />
@@ -24,7 +25,7 @@ function FormInput({ placeholder, title, setHandle }) {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    marginVertical: 8,
+    marginBottom: 16,
   },
   title: {
     color: COLORS.highlight,
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     width: "100%",
     padding: 8,
-    marginTop: 8,
+    marginBottom: 8,
     borderRadius: 4,
   },
   textInput: {

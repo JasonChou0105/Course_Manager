@@ -12,40 +12,71 @@ import SubmissionButton from "./SubmissionButton";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addCourse } from "../../store/slices/courses";
+import { useNavigation } from "@react-navigation/native";
+import InvalidInputText from "./InvalidInputText";
+import BannerFormInput from "./BannerFormInput/BannerFormInput";
 
 function AddCourseForm() {
+  const navigation = useNavigation();
+
+  //for the value that is used to make the new class
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [banner, setBanner] = useState();
+
+  //for the value of the input
+  const [inputName, setInputName] = useState();
+  const [inputDescription, setInputDescription] = useState();
+  const [inputBanner, setInputBanner] = useState();
+
+  //used to set InvalidInputText to visable and check if inputs valid
+  const [validName, setValidName] = useState(true);
+
   const dispatch = useDispatch();
 
+  function resetInputs() {
+    setInputBanner("");
+    setInputDescription("");
+    setInputName("");
+  }
+
   function addCourseHandle() {
-    dispatch(
-      addCourse({ name: name, description: description, banner: banner })
-    );
+    if (name) {
+      dispatch(
+        addCourse({ name: name, description: description, banner: banner })
+      );
+      navigation.navigate("HomeScreen");
+      resetInputs();
+    } else {
+      setValidName(false);
+    }
   }
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Card justifyContent="center" alignItems="center" shadowOpacity={1}>
+        <Card justifyContent="center" shadowOpacity={1}>
           <View style={styles.headerContainer}>
             <Header2>Add Course</Header2>
           </View>
+          {!validName && (
+            <InvalidInputText>Course name required</InvalidInputText>
+          )}
           <FormInput
             placeholder="Course Name"
             title="COURSE NAME"
+            value={inputName}
             setHandle={setName}
+            setValid={setValidName}
           />
+
           <FormInput
             placeholder="Description (room, teacher, etc)"
             title="DESCRIPTION"
+            value={inputDescription}
             setHandle={setDescription}
           />
-          <FormInput
-            placeholder="Banner"
-            title="BANNER"
-            setHandle={setBanner}
-          />
+
+          <BannerFormInput title="BANNER" />
           <SubmissionButton submitHandle={addCourseHandle} />
         </Card>
       </View>

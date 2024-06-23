@@ -1,8 +1,5 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import OrangeBanner from "../../../assets/banners/Orange/OrangeBanner";
+import { StyleSheet, View } from "react-native";
 import { Header2 } from "../../Headers/DefaultHeaders/Headers";
-import BlueBanner from "../../../assets/banners/Blue/BlueBanner";
-import PurpleBanner from "../../../assets/banners/Purple/PurpleBanner";
 import getBanner from "../../../HelperFunctions/getBanner";
 
 function TileHeader({ children, banner }) {
