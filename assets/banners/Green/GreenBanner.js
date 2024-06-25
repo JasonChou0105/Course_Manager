@@ -1,15 +1,15 @@
 import { StyleSheet, View } from "react-native";
-import OrangeBannerSvg from "./OrangeBannerSvg";
 import { LinearGradient } from "expo-linear-gradient";
 import BANNERCOLORS from "../../../constants/Colors/BANNERCOLORS";
+import GreenBannerSvg from "./GreenBannerSvg";
 
-function OrangeBanner() {
+function GreenBanner() {
   return (
     <LinearGradient
-      colors={[BANNERCOLORS.orange.light, BANNERCOLORS.orange.dark]}
+      colors={[BANNERCOLORS.green.light, BANNERCOLORS.green.dark]}
       style={styles.background}
     >
-      <OrangeBannerSvg style={styles.wave} />
+      <GreenBannerSvg style={styles.wave} />
     </LinearGradient>
   );
 }
@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
   wave: {
     position: "absolute",
     width: "100%",
-    height: "100%", // Adjust this value as needed
+    height: "100%",
     bottom: 0,
   },
 });
-export default OrangeBanner;
+export default GreenBanner;

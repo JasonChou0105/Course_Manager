@@ -15,13 +15,13 @@ const OrangeBannerSvg = () => {
         // Move right
         Animated.timing(moveAnim1, {
           toValue: { x: 200, y: 75 },
-          duration: 4000,
+          duration: 4200,
           useNativeDriver: true,
           easing: Easing.inOut(Easing.quad),
         }),
         Animated.timing(moveAnim1, {
           toValue: { x: 0, y: 0 },
-          duration: 4000,
+          duration: 4200,
           useNativeDriver: true,
           easing: Easing.inOut(Easing.quad),
         }),
@@ -33,13 +33,13 @@ const OrangeBannerSvg = () => {
         // Move right
         Animated.timing(moveAnim2, {
           toValue: { x: 75, y: 20 },
-          duration: 4000,
+          duration: 4200,
           useNativeDriver: true,
           easing: Easing.inOut(Easing.quad),
         }),
         Animated.timing(moveAnim2, {
           toValue: { x: 0, y: 0 },
-          duration: 4000,
+          duration: 4200,
           useNativeDriver: true,
           easing: Easing.inOut(Easing.quad),
         }),

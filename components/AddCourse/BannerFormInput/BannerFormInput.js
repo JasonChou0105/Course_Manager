@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Pressable, Modal } from "react-native";
 import BlueBanner from "../../../assets/banners/Blue/BlueBanner";
-import BannerSelectionModal from "./BannerSelectionModal";
+import BannerSelectionModal from "./BannerModel/BannerSelectionModal";
 
 function BannerFormInput({ title }) {
   const [modelOpen, setModelOpen] = useState(false);
@@ -12,6 +12,7 @@ function BannerFormInput({ title }) {
     <View style={styles.container}>
       <Modal
         transparent={true}
+        statusBarTranslucent={false}
         animationType="slide"
         visible={modelOpen}
         style={styles.modal}

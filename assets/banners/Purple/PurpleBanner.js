@@ -6,7 +6,7 @@ import PurpleBannerSvg from "./PurpleBannerSvg";
 function PurpleBanner() {
   return (
     <LinearGradient
-      colors={[BANNERCOLORS.purple.dark, BANNERCOLORS.purple.light]}
+      colors={[BANNERCOLORS.purple.light, BANNERCOLORS.purple.dark]}
       style={styles.background}
     >
       <PurpleBannerSvg style={styles.wave} />
