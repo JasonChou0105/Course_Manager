@@ -1,5 +1,5 @@
 import { StyleSheet, TextInput, View, Text } from "react-native";
-import COLORS from "../../constants/Colors/COLORS";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function FormInput({
   placeholder,

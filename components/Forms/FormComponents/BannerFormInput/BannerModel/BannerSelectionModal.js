@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, View, Animated } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import BannerSelectionOption from "./BannerSelectionOption";
-import BlueBanner from "../../../../assets/banners/Blue/BlueBanner";
-import OrangeBanner from "../../../../assets/banners/Orange/OrangeBanner";
-import PurpleBanner from "../../../../assets/banners/Purple/PurpleBanner";
-import GreenBanner from "../../../../assets/banners/Green/GreenBanner";
+import BlueBanner from "../../../../../assets/banners/Blue/BlueBanner";
+import OrangeBanner from "../../../../../assets/banners/Orange/OrangeBanner";
+import PurpleBanner from "../../../../../assets/banners/Purple/PurpleBanner";
+import GreenBanner from "../../../../../assets/banners/Green/GreenBanner";
 
 function BannerSelectionModal({ setModalVisable, setBanner, setInputBanner }) {
   function setBannerBlue() {

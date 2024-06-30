@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import ScreenHeader from "../components/Headers/ScreenHeader";
-import FormInput from "../components/AddCourse/FormInput";
-import AddCourseForm from "../components/AddCourse/AddCourseForm";
+import AddCourseForm from "../components/Forms/AddCourseForm";
 
 function AddCourseScreen() {
   return (

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, Pressable } from "react-native";
-import COLORS from "../../constants/Colors/COLORS";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function SubmissionButton({ submitHandle }) {
   return (

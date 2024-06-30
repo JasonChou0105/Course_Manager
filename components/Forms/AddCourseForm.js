@@ -4,17 +4,17 @@ import {
   Keyboard,
   View,
 } from "react-native";
-import FormInput from "./FormInput";
+import FormInput from "./FormComponents/FormInput";
 import Card from "../Backgrounds/Card";
 import Header2 from "../Headers/DefaultHeaders/Header2";
 import COLORS from "../../constants/Colors/COLORS";
-import SubmissionButton from "./SubmissionButton";
+import SubmissionButton from "./FormComponents/SubmissionButton";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addCourse } from "../../store/slices/courses";
 import { useNavigation } from "@react-navigation/native";
-import InvalidInputText from "./InvalidInputText";
-import BannerFormInput from "./BannerFormInput/BannerFormInput";
+import InvalidInputText from "./FormComponents/InvalidInputText";
+import BannerFormInput from "./FormComponents/BannerFormInput/BannerFormInput";
 
 function AddCourseForm() {
   const navigation = useNavigation();

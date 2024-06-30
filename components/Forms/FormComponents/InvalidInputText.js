@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import COLORS from "../../constants/Colors/COLORS";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function InvalidInputText({ children }) {
   return (

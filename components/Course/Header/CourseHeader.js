@@ -1,10 +1,4 @@
-import {
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Header1 } from "../../Headers/DefaultHeaders/Headers";
 import AverageContainer from "./AverageHeader";
 import BoxShadowIos from "../../Backgrounds/BoxShadowIos";
@@ -55,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "50%",
     margin: 20,
+    marginTop: 30,
   },
   averageContainer: {
     width: "50%",

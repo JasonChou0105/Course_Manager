@@ -5,7 +5,7 @@ import COLORS from "../../constants/Colors/COLORS";
 import { SafeAreaView } from "react-native-safe-area-context";
 import BoxShadowIos from "../Backgrounds/BoxShadowIos";
 
-function ScreenHeader({ children, AddCourseComp }) {
+function ScreenHeader({ children, ExtraComponent }) {
   const navigation = useNavigation();
 
   function toggleDrawer() {
@@ -22,7 +22,7 @@ function ScreenHeader({ children, AddCourseComp }) {
           <Text style={styles.title}>{children}</Text>
         </View>
         <View style={styles.innerContainer}>
-          {AddCourseComp && <AddCourseComp />}
+          {ExtraComponent && <ExtraComponent />}
           <View style={styles.profileContainer}>
             <Text style={styles.profileText}>J</Text>
           </View>

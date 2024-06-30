@@ -3,6 +3,7 @@ import ScreenHeader from "../components/Headers/ScreenHeader";
 import CourseHeader from "../components/Course/Header/CourseHeader";
 import Upcoming from "../components/Course/Upcoming/Upcoming";
 import { ScrollView } from "react-native-gesture-handler";
+import EditCourseButton from "../components/Course/EditCourseButton";
 
 //name, description, average, view homework and assignments, upcoming
 
@@ -11,7 +12,7 @@ function CourseScreen({ route }) {
     route.params;
   return (
     <View style={styles.container}>
-      <ScreenHeader>{name}</ScreenHeader>
+      <ScreenHeader ExtraComponent={EditCourseButton}>{name}</ScreenHeader>
       <ScrollView>
         <CourseHeader
           name={name}

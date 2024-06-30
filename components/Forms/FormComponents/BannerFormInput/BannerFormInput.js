@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Pressable, Modal } from "react-native";
-import BlueBanner from "../../../assets/banners/Blue/BlueBanner";
+import BlueBanner from "../../../../assets/banners/Blue/BlueBanner";
 import BannerSelectionModal from "./BannerModel/BannerSelectionModal";
 
 function BannerFormInput({ title, setInputBanner }) {
