@@ -1,12 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 
-function BannerSelectionOption({ banner }) {
+function BannerSelectionOption({ banner, setBanner }) {
   return (
-    <View style={styles.bannerDisplayContainer}>
+    <Pressable onPress={setBanner} style={styles.bannerDisplayContainer}>
       {banner}
-      <Text>hi</Text>
-    </View>
+    </Pressable>
   );
 }
 

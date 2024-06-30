@@ -1,9 +1,17 @@
 import { StyleSheet, TextInput, View, Text } from "react-native";
 import COLORS from "../../constants/Colors/COLORS";
 
-function FormInput({ placeholder, title, setHandle, value, setValid }) {
+function FormInput({
+  placeholder,
+  title,
+  setHandle,
+  value,
+  setValue,
+  setValid = () => {},
+}) {
   function onChangeHandle(text) {
     setHandle(text);
+    setValue(text);
     setValid(true);
   }
   return (

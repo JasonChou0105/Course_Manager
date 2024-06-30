@@ -27,26 +27,20 @@ function AddCourseForm() {
   //for the value of the input
   const [inputName, setInputName] = useState();
   const [inputDescription, setInputDescription] = useState();
-  const [inputBanner, setInputBanner] = useState();
 
   //used to set InvalidInputText to visable and check if inputs valid
   const [validName, setValidName] = useState(true);
 
   const dispatch = useDispatch();
 
-  function resetInputs() {
-    setInputBanner("");
-    setInputDescription("");
-    setInputName("");
-  }
-
   function addCourseHandle() {
     if (name) {
+      setInputDescription("");
+      setInputName("");
       dispatch(
         addCourse({ name: name, description: description, banner: banner })
       );
       navigation.navigate("HomeScreen");
-      resetInputs();
     } else {
       setValidName(false);
     }
@@ -54,7 +48,7 @@ function AddCourseForm() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Card justifyContent="center" shadowOpacity={1}>
+        <Card justifyContent="center" shadowOpacity={0.75}>
           <View style={styles.headerContainer}>
             <Header2>Add Course</Header2>
           </View>
@@ -65,6 +59,7 @@ function AddCourseForm() {
             placeholder="Course Name"
             title="COURSE NAME"
             value={inputName}
+            setValue={setInputName}
             setHandle={setName}
             setValid={setValidName}
           />
@@ -72,11 +67,12 @@ function AddCourseForm() {
           <FormInput
             placeholder="Description (room, teacher, etc)"
             title="DESCRIPTION"
+            setValue={setInputDescription}
             value={inputDescription}
             setHandle={setDescription}
           />
 
-          <BannerFormInput title="BANNER" />
+          <BannerFormInput title="BANNER" setInputBanner={setBanner} />
           <SubmissionButton submitHandle={addCourseHandle} />
         </Card>
       </View>

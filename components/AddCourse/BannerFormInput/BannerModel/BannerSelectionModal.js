@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, View, Animated } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import BannerSelectionOption from "./BannerSelectionOption";
@@ -7,7 +7,28 @@ import OrangeBanner from "../../../../assets/banners/Orange/OrangeBanner";
 import PurpleBanner from "../../../../assets/banners/Purple/PurpleBanner";
 import GreenBanner from "../../../../assets/banners/Green/GreenBanner";
 
-function BannerSelectionModal({ setModalVisable }) {
+function BannerSelectionModal({ setModalVisable, setBanner, setInputBanner }) {
+  function setBannerBlue() {
+    setBanner(<BlueBanner />);
+    setInputBanner("blue");
+    fadeOut();
+  }
+  function setBannerOrange() {
+    setBanner(<OrangeBanner />);
+    setInputBanner("orange");
+    fadeOut();
+  }
+  function setBannerPurple() {
+    setBanner(<PurpleBanner />);
+    setInputBanner("purple");
+    fadeOut();
+  }
+  function setBannerGreen() {
+    setBanner(<GreenBanner />);
+    setInputBanner("green");
+    fadeOut();
+  }
+
   const backgroundColor = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -42,10 +63,22 @@ function BannerSelectionModal({ setModalVisable }) {
         <Pressable onPress={fadeOut}>
           <Entypo name="cross" size={24} color="black" />
         </Pressable>
-        <BannerSelectionOption banner={<BlueBanner />} />
-        <BannerSelectionOption banner={<OrangeBanner />} />
-        <BannerSelectionOption banner={<PurpleBanner />} />
-        <BannerSelectionOption banner={<GreenBanner />} />
+        <BannerSelectionOption
+          banner={<BlueBanner />}
+          setBanner={setBannerBlue}
+        />
+        <BannerSelectionOption
+          banner={<OrangeBanner />}
+          setBanner={setBannerOrange}
+        />
+        <BannerSelectionOption
+          banner={<PurpleBanner />}
+          setBanner={setBannerPurple}
+        />
+        <BannerSelectionOption
+          banner={<GreenBanner />}
+          setBanner={setBannerGreen}
+        />
       </View>
     </Animated.View>
   );

@@ -1,4 +1,5 @@
 import BlueBanner from "../assets/banners/Blue/BlueBanner";
+import GreenBanner from "../assets/banners/Green/GreenBanner";
 import OrangeBanner from "../assets/banners/Orange/OrangeBanner";
 import PurpleBanner from "../assets/banners/Purple/PurpleBanner";
 
@@ -10,6 +11,8 @@ function getBanner(banner) {
     res = <OrangeBanner />;
   } else if (banner == "purple") {
     res = <PurpleBanner />;
+  } else if (banner == "green") {
+    res = <GreenBanner />;
   }
   return res;
 }

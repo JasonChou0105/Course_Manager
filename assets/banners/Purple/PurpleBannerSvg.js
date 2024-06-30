@@ -53,7 +53,7 @@ const PurpleBannerSvg = () => {
       style={{
         transition: ".3s",
       }}
-      viewBox="150 -50 1800 250"
+      viewBox="150 -60 1800 250"
     >
       <Defs>
         <LinearGradient id="a" x1={0} x2={0} y1={1} y2={0}>
