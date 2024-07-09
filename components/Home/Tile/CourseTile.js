@@ -8,6 +8,7 @@ function CourseTile({ Data }) {
   const navigation = useNavigation();
   function pressHandle() {
     navigation.navigate("CourseScreen", {
+      id: Data.id,
       name: Data.name,
       banner: Data.banner,
       description: Data.description,

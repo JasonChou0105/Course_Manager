@@ -8,6 +8,7 @@ export const coursesSlice = createSlice({
   initialState: {
     courses: [
       new Course({
+        id: 0,
         name: "Math",
         description: "idk what to put here but its here now",
         banner: "blue",
@@ -21,6 +22,7 @@ export const coursesSlice = createSlice({
         ],
       }).toJSON(),
       new Course({
+        id: 1,
         name: "Science",
         banner: "orange",
         average: "73.9",
@@ -29,8 +31,14 @@ export const coursesSlice = createSlice({
           new Assignment("2.5", new Date(2024, 2, 21).toDateString()),
         ],
       }).toJSON(),
-      new Course({ name: "Tech", banner: "purple", average: "92" }).toJSON(),
       new Course({
+        id: 2,
+        name: "Tech",
+        banner: "purple",
+        average: "92",
+      }).toJSON(),
+      new Course({
+        id: 3,
         name: "Geography",
         banner: "purple",
         average: "84.2",
@@ -41,8 +49,20 @@ export const coursesSlice = createSlice({
     addCourse: (state, action) => {
       state.courses.push(new Course(action.payload).toJSON());
     },
+    editCourse: (state, action) => {
+      state.courses = state.courses.map((item) => {
+        if (item.id === action.payload.id) {
+          return new Course(action.payload.params).toJSON();
+        }
+        return item;
+      });
+    },
+    // removeExpanse: (state, action) => {
+    //   state.expanses.splice(state.expanses.indexOf(action.payload.id), 1);
+    // },
   },
 });
 
 export const addCourse = coursesSlice.actions.addCourse;
+export const editCourse = coursesSlice.actions.editCourse;
 export default coursesSlice.reducer;

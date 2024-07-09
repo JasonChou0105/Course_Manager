@@ -11,34 +11,49 @@ import COLORS from "../../constants/Colors/COLORS";
 import SubmissionButton from "./FormComponents/SubmissionButton";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { addCourse } from "../../store/slices/courses";
+import { editCourse } from "../../store/slices/courses";
 import { useNavigation } from "@react-navigation/native";
 import InvalidInputText from "./FormComponents/InvalidInputText";
 import BannerFormInput from "./FormComponents/BannerFormInput/BannerFormInput";
+import { useEffect } from "react";
 
-function EditCourseForm({ initName, initDescription, initBanner }) {
+function EditCourseForm({ id, initName, initDescription, initBanner }) {
   const navigation = useNavigation();
-
   //for the value that is used to make the new class
-  const [name, setName] = useState(initName);
-  const [description, setDescription] = useState(initDescription);
-  const [banner, setBanner] = useState(initBanner);
+  const [name, setName] = useState();
+  const [description, setDescription] = useState();
+  const [banner, setBanner] = useState();
 
   //for the value of the input
-  const [inputName, setInputName] = useState(initName);
-  const [inputDescription, setInputDescription] = useState(initDescription);
+  const [inputName, setInputName] = useState();
+  const [inputDescription, setInputDescription] = useState();
 
   //used to set InvalidInputText to visable and check if inputs valid
   const [validName, setValidName] = useState(true);
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    setName(initName);
+    setDescription(initDescription);
+    setBanner(initBanner);
 
-  function addCourseHandle() {
+    setInputName(initName);
+    setInputDescription(initDescription);
+  }, [initName, initDescription, initBanner]);
+
+  function editCourseHandle() {
+    console.log("id: " + id);
     if (name) {
-      setInputDescription("");
-      setInputName("");
       dispatch(
-        addCourse({ name: name, description: description, banner: banner })
+        editCourse({
+          id: id,
+          params: {
+            id: id,
+            name: name,
+            description: description,
+            banner: banner,
+          },
+        })
       );
       navigation.navigate("HomeScreen");
     } else {
@@ -50,7 +65,7 @@ function EditCourseForm({ initName, initDescription, initBanner }) {
       <View style={styles.container}>
         <Card justifyContent="center" shadowOpacity={0.75}>
           <View style={styles.headerContainer}>
-            <Header2>Add Course</Header2>
+            <Header2>Edit {initName}</Header2>
           </View>
           {!validName && (
             <InvalidInputText>Course name required</InvalidInputText>
@@ -77,7 +92,10 @@ function EditCourseForm({ initName, initDescription, initBanner }) {
             setInputBanner={setBanner}
             initBanner={initBanner}
           />
-          <SubmissionButton submitHandle={addCourseHandle} />
+          <SubmissionButton
+            submitHandle={editCourseHandle}
+            title="CONFIRM EDIT"
+          />
         </Card>
       </View>
     </TouchableWithoutFeedback>

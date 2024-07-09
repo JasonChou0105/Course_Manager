@@ -1,5 +1,6 @@
 export default class Course {
   constructor({
+    id,
     name = "",
     description = "",
     banner = "",
@@ -7,8 +8,8 @@ export default class Course {
     tests = [],
     assignments = [],
     homework = [],
-    id = "0",
   }) {
+    this.id = id;
     this.name = name;
     this.description = description;
     this.banner = banner;
@@ -16,7 +17,6 @@ export default class Course {
     this.tests = tests;
     this.assignments = assignments;
     this.homework = homework;
-    this.id = id;
   }
   toJSON() {
     var newHomework = [];

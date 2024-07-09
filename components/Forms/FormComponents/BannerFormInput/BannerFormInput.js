@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Pressable, Modal } from "react-native";
 import BannerSelectionModal from "./BannerModel/BannerSelectionModal";
 import getBanner from "../../../../HelperFunctions/getBanner";
 
 function BannerFormInput({ title, setInputBanner, initBanner = "blue" }) {
   const [modelOpen, setModelOpen] = useState(false);
-  const [banner, setBanner] = useState(getBanner(initBanner));
+  const [banner, setBanner] = useState();
+  useEffect(() => {
+    setBanner(getBanner(initBanner));
+  }, [initBanner]);
   function onOpenBannerSelection() {
     setModelOpen(true);
   }

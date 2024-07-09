@@ -1,10 +1,10 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import COLORS from "../../../constants/Colors/COLORS";
 
-function SubmissionButton({ submitHandle }) {
+function SubmissionButton({ submitHandle, title }) {
   return (
     <Pressable style={styles.container} onPress={submitHandle}>
-      <Text style={styles.text}>ADD COURSE</Text>
+      <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
 }

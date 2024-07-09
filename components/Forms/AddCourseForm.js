@@ -9,7 +9,7 @@ import Card from "../Backgrounds/Card";
 import Header2 from "../Headers/DefaultHeaders/Header2";
 import COLORS from "../../constants/Colors/COLORS";
 import SubmissionButton from "./FormComponents/SubmissionButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addCourse } from "../../store/slices/courses";
 import { useNavigation } from "@react-navigation/native";
@@ -18,6 +18,7 @@ import BannerFormInput from "./FormComponents/BannerFormInput/BannerFormInput";
 
 function AddCourseForm() {
   const navigation = useNavigation();
+  const courses = useSelector((state) => state.courses.courses);
 
   //for the value that is used to make the new class
   const [name, setName] = useState();
@@ -38,7 +39,12 @@ function AddCourseForm() {
       setInputDescription("");
       setInputName("");
       dispatch(
-        addCourse({ name: name, description: description, banner: banner })
+        addCourse({
+          id: courses.length,
+          name: name,
+          description: description,
+          banner: banner,
+        })
       );
       navigation.navigate("HomeScreen");
     } else {
@@ -73,7 +79,7 @@ function AddCourseForm() {
           />
 
           <BannerFormInput title="BANNER" setInputBanner={setBanner} />
-          <SubmissionButton submitHandle={addCourseHandle} />
+          <SubmissionButton submitHandle={addCourseHandle} title="ADD COURSE" />
         </Card>
       </View>
     </TouchableWithoutFeedback>

@@ -8,12 +8,21 @@ import EditCourseButton from "../components/Course/EditCourseButton";
 //name, description, average, view homework and assignments, upcoming
 
 function CourseScreen({ route }) {
-  const { name, banner, description, average, assignments, homework, tests } =
-    route.params;
+  const {
+    id,
+    name,
+    banner,
+    description,
+    average,
+    assignments,
+    homework,
+    tests,
+  } = route.params;
   return (
     <View style={styles.container}>
       <ScreenHeader
         ExtraComponent={EditCourseButton.bind(this, {
+          courseId: id,
           courseName: name,
           courseDescription: description,
           courseBanner: banner,

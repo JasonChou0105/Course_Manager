@@ -3,10 +3,16 @@ import React from "react";
 import { Octicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet } from "react-native";
 
-function EditCourseButton({ courseName, courseDescription, courseBanner }) {
+function EditCourseButton({
+  courseId,
+  courseName,
+  courseDescription,
+  courseBanner,
+}) {
   const navigation = useNavigation();
   function addCourseHandle() {
     navigation.navigate("EditCourseScreen", {
+      id: courseId,
       name: courseName,
       description: courseDescription,
       banner: courseBanner,
