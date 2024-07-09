@@ -9,6 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import AddCourseScreen from "./screens/AddCourseScreen";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
+import EditCourseScreen from "./screens/EditCourseScreen";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,7 @@ function AppDrawer() {
           }}
         />
         <Drawer.Screen name="AddCourseScreen" component={AddCourseScreen} />
+        <Drawer.Screen name="EditCourseScreen" component={EditCourseScreen} />
       </Drawer.Navigator>
     </Provider>
   );

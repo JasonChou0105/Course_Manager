@@ -59,7 +59,6 @@ export default class Course {
       homework: newHomework,
       id: this.id,
     };
-    console.log(res);
     return res;
   }
 }

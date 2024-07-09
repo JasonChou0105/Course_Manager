@@ -4,29 +4,29 @@ import {
   Keyboard,
   View,
 } from "react-native";
-import FormInput from "./FormInput";
+import FormInput from "./FormComponents/FormInput";
 import Card from "../Backgrounds/Card";
 import Header2 from "../Headers/DefaultHeaders/Header2";
 import COLORS from "../../constants/Colors/COLORS";
-import SubmissionButton from "./SubmissionButton";
+import SubmissionButton from "./FormComponents/SubmissionButton";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addCourse } from "../../store/slices/courses";
 import { useNavigation } from "@react-navigation/native";
-import InvalidInputText from "./InvalidInputText";
-import BannerFormInput from "./BannerFormInput/BannerFormInput";
+import InvalidInputText from "./FormComponents/InvalidInputText";
+import BannerFormInput from "./FormComponents/BannerFormInput/BannerFormInput";
 
-function EditCourseForm() {
+function EditCourseForm({ initName, initDescription, initBanner }) {
   const navigation = useNavigation();
 
   //for the value that is used to make the new class
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const [banner, setBanner] = useState();
+  const [name, setName] = useState(initName);
+  const [description, setDescription] = useState(initDescription);
+  const [banner, setBanner] = useState(initBanner);
 
   //for the value of the input
-  const [inputName, setInputName] = useState();
-  const [inputDescription, setInputDescription] = useState();
+  const [inputName, setInputName] = useState(initName);
+  const [inputDescription, setInputDescription] = useState(initDescription);
 
   //used to set InvalidInputText to visable and check if inputs valid
   const [validName, setValidName] = useState(true);
@@ -72,7 +72,11 @@ function EditCourseForm() {
             setHandle={setDescription}
           />
 
-          <BannerFormInput title="BANNER" setInputBanner={setBanner} />
+          <BannerFormInput
+            title="BANNER"
+            setInputBanner={setBanner}
+            initBanner={initBanner}
+          />
           <SubmissionButton submitHandle={addCourseHandle} />
         </Card>
       </View>

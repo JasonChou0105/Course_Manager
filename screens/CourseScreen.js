@@ -12,7 +12,15 @@ function CourseScreen({ route }) {
     route.params;
   return (
     <View style={styles.container}>
-      <ScreenHeader ExtraComponent={EditCourseButton}>{name}</ScreenHeader>
+      <ScreenHeader
+        ExtraComponent={EditCourseButton.bind(this, {
+          courseName: name,
+          courseDescription: description,
+          courseBanner: banner,
+        })}
+      >
+        {name}
+      </ScreenHeader>
       <ScrollView>
         <CourseHeader
           name={name}

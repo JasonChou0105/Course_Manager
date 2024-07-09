@@ -14,10 +14,10 @@ export const coursesSlice = createSlice({
         average: "91.4",
         tests: [new Test("Exponents", new Date(2024, 3, 5).toDateString())],
         homework: [
-          new Assignment("2.3", new Date(2024, 5, 5).toDateString()),
-          new Assignment("2.1", new Date(2024, 5, 5).toDateString()),
-          new Assignment("2.2", new Date(2024, 5, 7).toDateString()),
-          new Assignment("2.3", new Date(2024, 5, 8).toDateString()),
+          new Assignment("2.3", new Date(2024, 7, 5).toDateString()),
+          new Assignment("2.1", new Date(2024, 7, 5).toDateString()),
+          new Assignment("2.2", new Date(2024, 7, 7).toDateString()),
+          new Assignment("2.3", new Date(2024, 7, 8).toDateString()),
         ],
       }).toJSON(),
       new Course({

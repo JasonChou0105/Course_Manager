@@ -3,15 +3,18 @@ import React from "react";
 import { Octicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet } from "react-native";
 
-function EditCourseButton() {
+function EditCourseButton({ courseName, courseDescription, courseBanner }) {
   const navigation = useNavigation();
-
   function addCourseHandle() {
-    navigation.navigate("EditCourseScreen");
+    navigation.navigate("EditCourseScreen", {
+      name: courseName,
+      description: courseDescription,
+      banner: courseBanner,
+    });
   }
   return (
     <Pressable onPress={addCourseHandle}>
-      <Octicons name="gear" size={28} style={styles.editIcon} color="black" />
+      <Octicons name="gear" size={25} style={styles.editIcon} color="black" />
     </Pressable>
   );
 }
