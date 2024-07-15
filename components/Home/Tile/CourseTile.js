@@ -9,13 +9,6 @@ function CourseTile({ Data }) {
   function pressHandle() {
     navigation.navigate("CourseScreen", {
       id: Data.id,
-      name: Data.name,
-      banner: Data.banner,
-      description: Data.description,
-      average: Data.average,
-      assignments: Data.assignments,
-      homework: Data.homework,
-      tests: Data.tests,
     });
   }
   return (

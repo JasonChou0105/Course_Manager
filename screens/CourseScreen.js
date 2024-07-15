@@ -4,20 +4,14 @@ import CourseHeader from "../components/Course/Header/CourseHeader";
 import Upcoming from "../components/Course/Upcoming/Upcoming";
 import { ScrollView } from "react-native-gesture-handler";
 import EditCourseButton from "../components/Course/EditCourseButton";
+import getCourse from "../HelperFunctions/getCourse";
 
 //name, description, average, view homework and assignments, upcoming
 
 function CourseScreen({ route }) {
-  const {
-    id,
-    name,
-    banner,
-    description,
-    average,
-    assignments,
-    homework,
-    tests,
-  } = route.params;
+  const { id } = route.params;
+  const { name, banner, description, average, assignments, homework, tests } =
+    getCourse(id);
   return (
     <View style={styles.container}>
       <ScreenHeader

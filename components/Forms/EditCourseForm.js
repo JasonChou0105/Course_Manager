@@ -42,7 +42,6 @@ function EditCourseForm({ id, initName, initDescription, initBanner }) {
   }, [initName, initDescription, initBanner]);
 
   function editCourseHandle() {
-    console.log("id: " + id);
     if (name) {
       dispatch(
         editCourse({
@@ -55,7 +54,7 @@ function EditCourseForm({ id, initName, initDescription, initBanner }) {
           },
         })
       );
-      navigation.navigate("HomeScreen");
+      navigation.navigate("CourseScreen", { id });
     } else {
       setValidName(false);
     }
