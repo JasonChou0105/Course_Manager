@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Course from "../../models/Course";
 import Assignment from "../../models/deadlines/Assignment";
+import Homework from "../../models/deadlines/Homework";
 import Test from "../../models/deadlines/Test";
 
 export const coursesSlice = createSlice({
@@ -15,10 +16,16 @@ export const coursesSlice = createSlice({
         average: "91.4",
         tests: [new Test("Exponents", new Date(2024, 3, 5).toDateString())],
         homework: [
-          new Assignment("2.3", new Date(2024, 7, 5).toDateString()),
-          new Assignment("2.1", new Date(2024, 7, 5).toDateString()),
-          new Assignment("2.2", new Date(2024, 7, 7).toDateString()),
-          new Assignment("2.3", new Date(2024, 7, 8).toDateString()),
+          new Homework(
+            "random ass graph",
+            new Date(2024, 6, 18).toDateString()
+          ),
+          new Homework("2.3", new Date(2024, 6, 18).toDateString()),
+          new Homework("im hungry", new Date(2024, 6, 19).toDateString()),
+          new Homework(
+            "AHHHHHHHHHHHHHHH",
+            new Date(2024, 6, 20).toDateString()
+          ),
         ],
       }).toJSON(),
       new Course({

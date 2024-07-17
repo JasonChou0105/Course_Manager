@@ -4,8 +4,9 @@ function getUpcomingDueDates(deadlines, amount) {
   var newDeadlines = [];
   var needed = amount ? amount : deadlines.length;
   var count = 0;
+
   for (const deadline of deadlines) {
-    dueDate = getDaysUntilDue(deadline.dueDate);
+    dueDate = getDaysUntilDue(new Date(deadline.dueDate));
     if (dueDate < 7 && count < needed) {
       newDeadlines.push(deadline);
       count++;
@@ -13,7 +14,7 @@ function getUpcomingDueDates(deadlines, amount) {
       count++;
     }
   }
-  var additional = newDeadlines.length - count;
+  const additional = count - newDeadlines.length;
   return [newDeadlines, additional];
 }
 

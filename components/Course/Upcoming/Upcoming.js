@@ -20,7 +20,7 @@ function Upcoming({ data, template = "", title }) {
   return (
     <Card>
       <View style={styles.headerContainer}>
-        <Header3>{title}</Header3>
+        <Text style={styles.titleText}>{title}</Text>
       </View>
       <View style={styles.itemsContainer}>
         {upcoming.length != 0 ? (
@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
   },
   itemsContainer: {
     marginTop: 8,
+  },
+  titleText: {
+    fontSize: 15,
   },
 });
 
