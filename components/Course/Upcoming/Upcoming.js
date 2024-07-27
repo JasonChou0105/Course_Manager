@@ -18,7 +18,7 @@ function Upcoming({ data, template = "", title }) {
 
   var [upcoming, additional] = getUpcomingDueDates(data, 4);
   return (
-    <Card>
+    <Card onPress={() => {}}>
       <View style={styles.headerContainer}>
         <Text style={styles.titleText}>{title}</Text>
       </View>

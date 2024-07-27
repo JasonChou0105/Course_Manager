@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import TileHeader from "./TileHeader";
 import InfoContainer from "./InfoContainer";
 import { useNavigation } from "@react-navigation/native";
@@ -12,22 +12,32 @@ function CourseTile({ Data }) {
     });
   }
   return (
-    <Pressable style={styles.container} onPress={pressHandle}>
-      <TileHeader banner={Data.banner}>{Data.name}</TileHeader>
-      <InfoContainer average={Data.average} homework={Data.homework} />
-    </Pressable>
+    <View style={styles.boxShadow}>
+      <Pressable style={styles.container} onPress={pressHandle}>
+        <TileHeader banner={Data.banner}>{Data.name}</TileHeader>
+        <InfoContainer average={Data.average} homework={Data.homework} />
+      </Pressable>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 8,
     borderWidth: 1,
     borderRadius: 8,
     borderColor: COLORS.border,
+    elevation: 4,
     overflow: "hidden",
+    backgroundColor: "#ffffffff",
+  },
+  boxShadow: {
+    margin: 8,
     height: 200,
+
+    shadowColor: "#000000",
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   infoContainer: {
     margin: 8,

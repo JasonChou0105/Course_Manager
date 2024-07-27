@@ -1,9 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import COLORS from "../../constants/Colors/COLORS";
 import { SafeAreaView } from "react-native-safe-area-context";
-import BoxShadowIos from "../Backgrounds/BoxShadowIos";
 
 function ScreenHeader({ children, ExtraComponent }) {
   const navigation = useNavigation();
@@ -13,7 +11,7 @@ function ScreenHeader({ children, ExtraComponent }) {
   }
 
   return (
-    <BoxShadowIos>
+    <View style={styles.shadowContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.innerContainer}>
           <Pressable onPress={toggleDrawer}>
@@ -28,7 +26,7 @@ function ScreenHeader({ children, ExtraComponent }) {
           </View>
         </View>
       </SafeAreaView>
-    </BoxShadowIos>
+    </View>
   );
 }
 
@@ -36,14 +34,22 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    borderBottomWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: "#ffffff",
     elevation: 10,
     marginBottom: 4,
     maxHeight: 105,
     padding: 8,
     paddingTop: 0,
+  },
+  shadowContainer: {
+    backgroundColor: "#FFF",
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 6,
+    zIndex: 999,
   },
   innerContainer: {
     flexDirection: "row",

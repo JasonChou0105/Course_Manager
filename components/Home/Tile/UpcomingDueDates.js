@@ -2,6 +2,7 @@ import React from "react";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import displayDueDates from "../../../HelperFunctions/DueDates/displayDueDate";
 import { StyleSheet, Text, View } from "react-native";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function UpcomingDueDates({ homework }) {
   var [upcoming, additional] = getUpcomingDueDates(homework, 3);
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   },
   timeUntilDueText: {
     fontSize: 12,
-    color: "#3d90d3",
+    color: COLORS.highlight,
     fontWeight: "500",
   },
   extraText: {

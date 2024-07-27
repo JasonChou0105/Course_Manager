@@ -1,12 +1,10 @@
 import { StyleSheet, View } from "react-native";
-import BoxShadowIos from "./BoxShadowIos";
-import COLORS from "../../constants/Colors/COLORS";
 
 function Card({
   children,
-  shadowOpacity = 0.3,
   alignItems = "none",
   justifyContent = "none",
+  onPress = () => {},
 }) {
   const styles = StyleSheet.create({
     container: {
@@ -14,20 +12,21 @@ function Card({
       marginVertical: 4,
       padding: 16,
       borderRadius: 8,
-      borderWidth: 1,
-      borderColor: COLORS.border,
       backgroundColor: "#ffffff",
-      elevation: shadowOpacity * 4,
+      elevation: 0.2,
       justifyContent: justifyContent,
       alignItems: alignItems,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
     },
   });
 
-  return (
-    <BoxShadowIos opacity={shadowOpacity}>
-      <View style={styles.container}>{children}</View>
-    </BoxShadowIos>
-  );
+  return <View style={styles.container}>{children}</View>;
 }
 
 export default Card;

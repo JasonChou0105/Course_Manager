@@ -8,7 +8,7 @@ function UpcomingItem({ dueDate, name, template }) {
       <Text style={styles.nameText}>{name}</Text>
       <View style={styles.dueDateContainer}>
         <Text style={styles.dueDateText}>
-          {`${template} ${displayDueDate(new Date(dueDate))}`}
+          {template} {displayDueDate(new Date(dueDate))}
         </Text>
       </View>
     </View>
@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
   },
   dueDateText: {
     fontSize: 12,
+  },
+  timeUntilDueText: {
+    fontSize: 12,
+    color: COLORS.highlight,
+    fontWeight: "500",
   },
 });
 
