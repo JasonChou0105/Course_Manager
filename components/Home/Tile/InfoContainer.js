@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 import UpcomingDueDates from "./UpcomingDueDates";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function InfoContainer({ average, homework }) {
   return (
     <View style={styles.container}>
       <UpcomingDueDates homework={homework} />
       <View style={styles.averageContainer}>
-        <Text>{average}%</Text>
+        <Text style={styles.averageText}>{average}%</Text>
       </View>
     </View>
   );
@@ -29,6 +30,10 @@ const styles = StyleSheet.create({
   },
   highlightedText: {
     fontStyle: "italic",
+  },
+  averageText: {
+    color: COLORS.textColor,
+    fontSize: 16,
   },
 });
 

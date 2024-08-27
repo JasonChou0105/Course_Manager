@@ -18,13 +18,13 @@ export const coursesSlice = createSlice({
         homework: [
           new Homework(
             "random ass graph",
-            new Date(2024, 6, 18).toDateString()
+            new Date(2024, 7, 30).toDateString()
           ),
-          new Homework("2.3", new Date(2024, 6, 18).toDateString()),
-          new Homework("im hungry", new Date(2024, 6, 19).toDateString()),
+          new Homework("2.3", new Date(2024, 7, 30).toDateString()),
+          new Homework("im hungry", new Date(2024, 7, 31).toDateString()),
           new Homework(
             "AHHHHHHHHHHHHHHH",
-            new Date(2024, 6, 20).toDateString()
+            new Date(2024, 7, 31).toDateString()
           ),
         ],
       }).toJSON(),
@@ -33,10 +33,7 @@ export const coursesSlice = createSlice({
         name: "Science",
         banner: "orange",
         average: "73.9",
-        homework: [
-          new Assignment("2.4", new Date(2024, 2, 20).toDateString()),
-          new Assignment("2.5", new Date(2024, 2, 21).toDateString()),
-        ],
+        homework: [],
       }).toJSON(),
       new Course({
         id: 2,

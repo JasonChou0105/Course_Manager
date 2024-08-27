@@ -23,7 +23,7 @@ function UpcomingDueDates({ homework }) {
 function displayDueDateLocal(deadline) {
   return (
     <Text style={styles.dueDateText}>
-      {deadline.name} due
+      {deadline.name}
       <Text style={styles.timeUntilDueText}>
         {" "}
         {displayDueDates(new Date(deadline.dueDate))}
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   },
   dueDateText: {
     fontSize: 12,
+    color: COLORS.textColor,
   },
   timeUntilDueText: {
     fontSize: 12,

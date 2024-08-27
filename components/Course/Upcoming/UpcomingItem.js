@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Header3 } from "../../Headers/DefaultHeaders/Headers";
 import displayDueDate from "../../../HelperFunctions/DueDates/displayDueDate";
+import COLORS from "../../../constants/Colors/COLORS";
 
-function UpcomingItem({ dueDate, name, template }) {
+function UpcomingItem({ dueDate, name }) {
   return (
     <View style={styles.container}>
       <Text style={styles.nameText}>{name}</Text>
       <View style={styles.dueDateContainer}>
         <Text style={styles.dueDateText}>
-          {template} {displayDueDate(new Date(dueDate))}
+          {displayDueDate(new Date(dueDate))}
         </Text>
       </View>
     </View>
@@ -17,14 +18,25 @@ function UpcomingItem({ dueDate, name, template }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
-    margin: 8,
-    padding: 8,
-    borderBottomWidth: 1,
-    borderColor: "#99999923",
+    width: "100%",
+    paddingHorizontal: 12,
+    paddingVertical: 18,
+    margin: 2,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: "#ffffff",
+    borderBottomColor: "#a2a2a22b",
+    backgroundColor: "#ffffff",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    shadowColor: "#72727278",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
   },
   dueDateContainer: {
     flexDirection: "row",
@@ -32,14 +44,11 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 13,
+    color: COLORS.textColor,
   },
   dueDateText: {
     fontSize: 12,
-  },
-  timeUntilDueText: {
-    fontSize: 12,
-    color: COLORS.highlight,
-    fontWeight: "500",
+    color: COLORS.textColor,
   },
 });
 

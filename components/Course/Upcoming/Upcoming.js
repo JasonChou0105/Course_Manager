@@ -5,15 +5,9 @@ import UpcomingItem from "./UpcomingItem";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import COLORS from "../../../constants/Colors/COLORS";
 
-function Upcoming({ data, template = "", title }) {
+function Upcoming({ data, title }) {
   function renderDueDate(data) {
-    return (
-      <UpcomingItem
-        name={data.name}
-        dueDate={data.dueDate}
-        template={template}
-      />
-    );
+    return <UpcomingItem name={data.name} dueDate={data.dueDate} />;
   }
 
   var [upcoming, additional] = getUpcomingDueDates(data, 4);

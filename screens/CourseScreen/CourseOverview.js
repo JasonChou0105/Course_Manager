@@ -32,7 +32,7 @@ function CourseOverview({ route }) {
           average={average}
           banner={banner}
         />
-        <Upcoming data={homework} template="due" title="Upcoming Homework" />
+        <Upcoming data={homework} title="Upcoming Homework" />
         <Upcoming data={tests} title="Upcoming Tests" />
       </ScrollView>
     </View>

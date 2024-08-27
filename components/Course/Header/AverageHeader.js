@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Header1 } from "../../Headers/DefaultHeaders/Headers";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function AverageContainer({ children }) {
   return (
     <View style={styles.container}>
-      <Header1>{children}%</Header1>
+      <Header1 color={COLORS.textColor}>{children}%</Header1>
     </View>
   );
 }
