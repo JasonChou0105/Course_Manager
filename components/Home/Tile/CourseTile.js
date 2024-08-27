@@ -32,9 +32,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffffff",
   },
   boxShadow: {
-    margin: 8,
+    margin: 12,
     height: 200,
-
     shadowColor: "#000000",
     shadowOpacity: 0.2,
     shadowRadius: 3,

@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { Header3 } from "../../Headers/DefaultHeaders/Headers";
-import Card from "../../Backgrounds/Card";
+import Card from "../../Card";
 import UpcomingItem from "./UpcomingItem";
 import getUpcomingDueDates from "../../../HelperFunctions/DueDates/getUpcomingDueDates";
 import COLORS from "../../../constants/Colors/COLORS";
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 15,
+    color: COLORS.textColor,
   },
 });
 

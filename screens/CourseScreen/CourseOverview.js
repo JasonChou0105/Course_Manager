@@ -1,15 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import ScreenHeader from "../components/Headers/ScreenHeader";
-import CourseHeader from "../components/Course/Header/CourseHeader";
-import Upcoming from "../components/Course/Upcoming/Upcoming";
+import ScreenHeader from "../../components/Headers/ScreenHeader";
+import CourseHeader from "../../components/Course/Header/CourseHeader";
+import Upcoming from "../../components/Course/Upcoming/Upcoming";
 import { ScrollView } from "react-native-gesture-handler";
-import EditCourseButton from "../components/Course/EditCourseButton";
-import getCourse from "../HelperFunctions/getCourse";
+import EditCourseButton from "../../components/Course/EditCourseButton";
+import getCourse from "../../HelperFunctions/getCourse";
 
 //name, description, average, view homework and assignments, upcoming
 
-function CourseScreen({ route }) {
-  const { id } = route.params;
+function CourseOverview({ route }) {
+  const id = route.params.id;
+
   const { name, banner, description, average, assignments, homework, tests } =
     getCourse(id);
   return (
@@ -46,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CourseScreen;
+export default CourseOverview;

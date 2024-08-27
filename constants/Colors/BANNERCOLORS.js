@@ -1,15 +1,15 @@
 export default BANNERCOLORS = {
   orange: {
-    light: "#bb570e",
-    dark: "#613301",
+    light: "#bb7746",
+    dark: "#96622a",
   },
   blue: {
-    light: "#2494b6",
-    dark: "#0b3966",
+    light: "#4e9db5",
+    dark: "#20609f",
   },
   purple: {
-    light: "#6d2fb4ff",
-    dark: "#140846",
+    light: "#7e52b0ff",
+    dark: "#331a95",
   },
   green: {
     light: "#36d164",

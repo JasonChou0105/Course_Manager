@@ -5,7 +5,7 @@ import {
   View,
 } from "react-native";
 import FormInput from "./FormComponents/FormInput";
-import Card from "../Backgrounds/Card";
+import Card from "../Card";
 import Header2 from "../Headers/DefaultHeaders/Header2";
 import COLORS from "../../constants/Colors/COLORS";
 import SubmissionButton from "./FormComponents/SubmissionButton";

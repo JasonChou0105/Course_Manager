@@ -9,6 +9,7 @@ function Header2({ children, margin, color, weight = "400" }) {
       fontSize: 20,
       fontWeight: weight,
       color: color,
+      fontFamily: "Cabin sans-serif",
     },
   });
 

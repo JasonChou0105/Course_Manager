@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import CourseScreen from "./screens/CourseScreen";
+import CourseScreen from "./screens/CourseScreen/CourseScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import AddCourseScreen from "./screens/AddCourseScreen";
 import { store } from "./store/store";

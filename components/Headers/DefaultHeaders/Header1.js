@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
+import COLORS from "../../../constants/Colors/COLORS";
 
 function Header1({ children, margin, color, weight = "400" }) {
   const styles = StyleSheet.create({
@@ -6,6 +7,7 @@ function Header1({ children, margin, color, weight = "400" }) {
       margin: margin,
     },
     title: {
+      color: COLORS.textColor,
       fontSize: 28,
       fontWeight: weight,
       color: color,

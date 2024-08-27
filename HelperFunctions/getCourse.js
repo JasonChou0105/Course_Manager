@@ -4,7 +4,6 @@ function getCourse(id) {
   const courses = useSelector((state) => state.courses.courses);
   let course;
   for (let i = 0; i < courses.length; i++) {
-    console.log(courses[i]);
     if (i == id) {
       course = courses[i];
     }
