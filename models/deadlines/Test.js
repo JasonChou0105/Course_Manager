@@ -1,15 +1,15 @@
 import Deadline from "../Deadline";
 
 export default class Test extends Deadline {
-  constructor(
+  constructor({
     name = "",
     testDate = "",
     description = "",
     totalMark = "",
     achivedMark = "",
     weight = "",
-    id = ""
-  ) {
+    id = "",
+  }) {
     super(name, testDate, description);
     this.totalMark = totalMark;
     this.achivedMark = achivedMark;

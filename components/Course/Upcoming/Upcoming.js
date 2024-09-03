@@ -7,7 +7,9 @@ import COLORS from "../../../constants/Colors/COLORS";
 
 function Upcoming({ data, title }) {
   function renderDueDate(data) {
-    return <UpcomingItem name={data.name} dueDate={data.dueDate} />;
+    return (
+      <UpcomingItem key={data.id} name={data.name} dueDate={data.dueDate} />
+    );
   }
 
   var [upcoming, additional] = getUpcomingDueDates(data, 4);

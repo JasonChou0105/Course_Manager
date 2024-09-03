@@ -21,8 +21,10 @@ function UpcomingDueDates({ homework }) {
   );
 }
 function displayDueDateLocal(deadline) {
+  console.log(deadline);
+
   return (
-    <Text style={styles.dueDateText}>
+    <Text style={styles.dueDateText} key={deadline.id}>
       {deadline.name}
       <Text style={styles.timeUntilDueText}>
         {" "}

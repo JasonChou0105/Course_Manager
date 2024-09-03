@@ -3,7 +3,7 @@ import CourseTile from "./Tile/CourseTile";
 
 function CoursesDisplay({ courses }) {
   function DisplayTile(item) {
-    return <CourseTile Data={item} />;
+    return <CourseTile key={item.id} Data={item} />;
   }
   return (
     <ScrollView style={styles.container}>

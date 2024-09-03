@@ -14,18 +14,34 @@ export const coursesSlice = createSlice({
         description: "idk what to put here but its here now",
         banner: "blue",
         average: "91.4",
-        tests: [new Test("Exponents", new Date(2024, 3, 5).toDateString())],
+        tests: [
+          new Test({
+            name: "Exponents",
+            testDate: new Date(2024, 3, 5).toDateString(),
+            id: 0,
+          }),
+        ],
         homework: [
-          new Homework(
-            "random ass graph",
-            new Date(2024, 7, 30).toDateString()
-          ),
-          new Homework("2.3", new Date(2024, 7, 30).toDateString()),
-          new Homework("im hungry", new Date(2024, 7, 31).toDateString()),
-          new Homework(
-            "AHHHHHHHHHHHHHHH",
-            new Date(2024, 7, 31).toDateString()
-          ),
+          new Homework({
+            name: "random ass graph",
+            dueDate: new Date(2024, 7, 30).toDateString(),
+            id: 0,
+          }),
+          new Homework({
+            name: "2.3",
+            dueDate: new Date(2024, 7, 30).toDateString(),
+            id: 1,
+          }),
+          new Homework({
+            name: "im hungry",
+            dueDate: new Date(2024, 7, 31).toDateString(),
+            id: 2,
+          }),
+          new Homework({
+            name: "AHHHHHHHHHHHHHHH",
+            dueDate: new Date(2024, 7, 31).toDateString(),
+            id: 3,
+          }),
         ],
       }).toJSON(),
       new Course({
