@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Octicons } from "@expo/vector-icons";
+import Octicons from "@expo/vector-icons/Octicons";
 import { Pressable, StyleSheet } from "react-native";
 
 function EditCourseButton({
@@ -20,7 +20,7 @@ function EditCourseButton({
   }
   return (
     <Pressable onPress={addCourseHandle}>
-      <Octicons name="gear" size={25} style={styles.editIcon} color="black" />
+      <Octicons name="gear" size={25} style={styles.editIcon} color="#5f5f5f" />
     </Pressable>
   );
 }

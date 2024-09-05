@@ -24,22 +24,22 @@ export const coursesSlice = createSlice({
         homework: [
           new Homework({
             name: "random ass graph",
-            dueDate: new Date(2024, 7, 30).toDateString(),
+            dueDate: new Date(2024, 8, 8).toDateString(),
             id: 0,
           }),
           new Homework({
             name: "2.3",
-            dueDate: new Date(2024, 7, 30).toDateString(),
+            dueDate: new Date(2024, 8, 9).toDateString(),
             id: 1,
           }),
           new Homework({
             name: "im hungry",
-            dueDate: new Date(2024, 7, 31).toDateString(),
+            dueDate: new Date(2024, 8, 9).toDateString(),
             id: 2,
           }),
           new Homework({
             name: "AHHHHHHHHHHHHHHH",
-            dueDate: new Date(2024, 7, 31).toDateString(),
+            dueDate: new Date(2024, 8, 10).toDateString(),
             id: 3,
           }),
         ],
